@@ -953,3 +953,107 @@ header {
 .character-item:hover {
   transform: translateY(-5px);
 }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+
+/* Smooth slide animation */
+#testimonial-slider {
+  overflow: hidden;
+}
+#testimonial-cards {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.tab-content {
+  @apply transform-gpu transition-all duration-500 ease-in-out opacity-0 translate-y-4;
+}
+.tab-content.active {
+  @apply opacity-100 translate-y-0;
+}
+#feature-image {
+  @apply transition-transform duration-300 ease-in-out;
+}
+.scale-105 {
+  transform: scale(1.05);
+}
+
+.stat-item:hover .stat-number {
+  background: linear-gradient(to right, #FF951A, #FFB74D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-number {
+  background: linear-gradient(to right, #FF951A 0%, #FF951A 100%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  transition: background-size 1s ease-in-out;
+}
+.stat-item:hover .stat-number {
+  background-size: 100% 100%;
+}
+
+/* Smooth Transitions */
+.transition-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effects */
+.button-hover-scale:hover {
+  transform: scale(1.05);
+}
+.button-hover-bg:hover {
+  background-color: hsl(28, 100%, 45%) !important;
+}
+
+/* Character Card Enhancements */
+.character-item img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.character-item:hover img {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 10px 30px rgba(255, 149, 26, 0.4);
+}
+
+/* Blog Post Hover Effect */
+.group:hover .blog-image {
+  transform: scale(1.05);
+}
+
+/* Footer Link Hover Glow */
+.footer-link:hover {
+  color: #FF951A;
+  text-shadow: 0 0 5px rgba(255, 149, 26, 0.7);
+}
+
+/* Input Focus Glow */
+input:focus, textarea:focus {
+  border-color: #FF951A;
+  box-shadow: 0 0 0 3px rgba(255, 149, 26, 0.2);
+}
+
+/* Smooth Scroll Animation */
+html {
+  scroll-behavior: smooth;
+}
+@keyframes character-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-character-scroll {
+  animation: character-scroll 30s linear infinite;
+}
