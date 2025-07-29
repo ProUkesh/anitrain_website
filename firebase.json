@@ -11,6 +11,14 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ]
+    ],
+     "redirects": [
+    {
+      "source": "/",
+      "destination": "https://anitrain.app",
+      "type": 301
+    }
+  ]
+    
   }
 }
