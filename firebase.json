@@ -1,16 +1,12 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+      { "source": "/privacy.html", "destination": "/privacy.html" },
+      { "source": "/blog.html", "destination": "/blog.html" },
+      { "source": "/game.html", "destination": "/game.html" },
+      { "source": "**", "destination": "/index.html" }
     ]
   }
 }
