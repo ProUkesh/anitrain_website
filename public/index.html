@@ -1,636 +1,619 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AniTrain – Anime Fitness App to Train Like Goku, Naruto & More</title>
-<meta name="description" content="AniTrain is the ultimate anime fitness app. Train like your favorite anime heroes with Saitama, Goku, and Luffy workouts, XP levels, and AI plans.">
+  <title>hello – Anime Fitness App to Train Like Goku, Naruto & More</title>
+  <meta name="description" content="AniTrain is the ultimate anime fitness app. Train like your favorite anime heroes with Saitama, Goku, and Luffy workouts, XP levels, and AI plans." />
   <meta name="keywords" content="anime fitness app, anime workout, train like Goku, anime gym routine, fitness inspired by anime, Saiyan training app, Naruto workout, AniTrain app, workout XP app, anime challenge fitness" />
   <meta name="author" content="programmerukesh.com" />
   <link rel="canonical" href="https://anitrain.app/" />
   <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph for Facebook, Discord, etc. -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AniTrain – Train Like an Anime Hero" />
   <meta property="og:description" content="Join the most viral anime fitness app. Train like Goku, Naruto, and Saitama with XP, beast mode, and real challenges." />
   <meta property="og:image" content="https://anitrain.app/preview.jpg" />
   <meta property="og:url" content="https://anitrain.app/" />
   <meta property="og:site_name" content="AniTrain" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AniTrain – Train Like Goku & Naruto" />
   <meta name="twitter:description" content="Level up with anime-themed workouts and streak-based beast mode in AniTrain." />
-  <meta name="twitter:image" content="https://anitrain.app/preview.jpg" />
-
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class', // Enable class-based dark mode
-            theme: {
-                extend: {
-                    colors: {
-                        'anitrain-orange': 'hsl(28, 100%, 55%)',
-                        'anitrain-orange-dark': 'hsl(28, 100%, 45%)',
-                        
-                        // Dark Mode Colors
-                        'dark-bg': 'hsl(240, 10%, 4%)',
-                        'dark-bg-secondary': 'hsl(240, 10%, 8%)',
-                        'dark-surface': 'hsl(240, 10%, 12%)',
-                        'dark-text-primary': 'hsl(0, 0%, 98%)',
-                        'dark-text-secondary': 'hsl(240, 5%, 65%)',
-                        'dark-border': 'hsl(240, 5%, 20%)',
-
-                        // Light Mode Colors
-                        'light-bg': 'hsl(0, 0%, 100%)',
-                        'light-bg-secondary': 'hsl(240, 20%, 98%)',
-                        'light-surface': 'hsl(0, 0%, 95%)',
-                        'light-text-primary': 'hsl(240, 6%, 10%)',
-                        'light-text-secondary': 'hsl(240, 4%, 35%)',
-                        'light-border': 'hsl(240, 10%, 90%)',
-                    },
-                    fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                    },
-                    screens: { 'xs': '450px', },
-                    animation: {
-                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                }
+  <!-- Scripts & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'anitrain-orange': 'hsl(28, 100%, 55%)',
+            'anitrain-orange-dark': 'hsl(28, 100%, 45%)',
+            'anitrain-orange-light': 'hsl(28, 100%, 65%)',
+            'dark-bg': 'hsl(240, 10%, 4%)',
+            'dark-bg-secondary': 'hsl(240, 10%, 8%)',
+            'dark-surface': 'hsl(240, 10%, 12%)',
+            'dark-text-primary': 'hsl(0, 0%, 98%)',
+            'dark-text-secondary': 'hsl(240, 5%, 65%)',
+            'dark-border': 'hsl(240, 5%, 20%)',
+            'light-bg': 'hsl(0, 0%, 100%)',
+            'light-bg-secondary': 'hsl(240, 20%, 98%)',
+            'light-surface': 'hsl(0, 0%, 95%)',
+            'light-text-primary': 'hsl(240, 6%, 10%)',
+            'light-text-secondary': 'hsl(240, 4%, 35%)',
+            'light-border': 'hsl(240, 10%, 90%)',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          screens: { 'xs': '450px' },
+          animation: {
+            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'bounce-slow': 'bounce 3s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            glow: {
+              'from': { textShadow: '0 0 10px rgba(255,149,26,0.7), 0 0 20px rgba(255,149,26,0.5)' },
+              'to': { textShadow: '0 0 25px rgba(255,149,26,0.9), 0 0 45px rgba(255,149,26,0.7)' }
+            },
+            'bounce-slow': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' }
             }
+          },
+          boxShadow: {
+            'soft': '0 10px 25px rgba(0,0,0,0.1)',
+            'hard': '0 20px 40px rgba(0,0,0,0.2)',
+            'glass': '0 8px 32px rgba(0,0,0,0.2)',
+            'inner-glow': 'inset 0 0 15px rgba(255,149,26,0.3)'
+          },
+          backdropBlur: {
+            'xs': '2px',
+            'sm': '4px',
+          }
         }
-    </script>
-    <style>
-        #reviewSlider > div {
-  box-sizing: border-box;
-}
-
-        @keyframes character-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-character-scroll {
-  animation: character-scroll 30s linear infinite;
-}
-
-        /* Basic transitions for a smoother experience */
-        body, header, section, footer, div, p, h1, h2, h3, a, button, img {
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-    </style>
+      }
+    };
+  </script>
+  <!-- Custom Styles -->
+  <style>
+    @keyframes character-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-character-scroll {
+      animation: character-scroll 40s linear infinite;
+    }
+    body, header, section, footer, div, p, h1, h2, h3, a, button, img {
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    /* Enhanced Hero Banner */
+    .hero-banner {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      transition: all 0.4s ease;
+      border: 4px solid transparent;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a) padding-box,
+                  linear-gradient(135deg, #FF951A, #FF6B00) border-box;
+    }
+    .hero-banner:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 35px 70px rgba(0,0,0,0.3);
+    }
+    /* Review Cards Hover Effect */
+    .review-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    }
+    /* Speech Bubble Arrow */
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: #fff;
+    }
+    .dark .speech-bubble::after {
+      border-top-color: hsl(240, 10%, 12%); /* Corresponds to dark:bg-dark-surface */
+    }
+    /* Saiyan Mode Toggle */
+    #theme-toggle.saiyan {
+      animation: glow 1.5s infinite alternate;
+    }
+    /* Character Tilt */
+    .character-item img {
+      transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 4px solid hsl(28, 100%, 55%);
+    }
+    .character-item:hover img {
+      transform: scale(1.15) translateY(-12px) rotate(-7deg);
+      box-shadow: 0 20px 40px rgba(255,149,26,0.4);
+    }
+    /* GoFundMe Modal */
+    #gofundme-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+    #gofundme-modal.show {
+      display: flex;
+    }
+    .modal-content {
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow: hidden;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    #gofundme-modal.show .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .modal-close-btn:hover {
+      background: rgba(0,0,0,0.4);
+      transform: rotate(90deg);
+    }
+    /* Floating CTA */
+    .cta-float {
+      animation: bounce-slow 3s infinite;
+    }
+    /* Gradient Background for Dark Mode */
+    .dark .gradient-bg {
+      background: linear-gradient(135deg, 
+        hsl(240, 15%, 5%) 0%, 
+        hsl(240, 12%, 8%) 50%, 
+        hsl(240, 10%, 12%) 100%);
+    }
+  </style>
 </head>
-
-<body id="top" class="font-poppins bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-primary">
-    <header class="sticky top-0 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-light-border dark:border-dark-border">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-               <a href="#" class="flex-shrink-0">
-  <img 
-    src="./anitrain-logo.png" 
-    alt="AniTrain logo" 
-    class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-md border border-anitrain-orange"
-  >
-</a>
-
-
-                <nav class="hidden lg:flex lg:items-center lg:space-x-6">
-                    <a href="#features" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Features</a>
-                    <a href="#characters" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Characters</a>
-                    <a href="#overview" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Overview</a>
-                    <a href="./blog.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">News</a>
-                </nav>
-
-                <div class="flex items-center space-x-2 sm:space-x-4">
-                     <button class="px-5 py-2.5 bg-anitrain-orange text-white font-medium text-sm leading-tight uppercase rounded-full shadow-lg hover:bg-anitrain-orange-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-anitrain-orange transition-all transform hover:scale-105">
-                        Get Started
-                    </button>
-                    <button id="theme-toggle" type="button" class="p-2 rounded-full text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10 focus:outline-none">
-                        <ion-icon name="moon-outline" class="text-xl hidden dark:inline"></ion-icon>
-<ion-icon name="sunny-outline" class="text-xl text-yellow-400 inline dark:hidden"></ion-icon>
-                        <span class="sr-only">Toggle theme</span>
-                    </button>
-                    <div class="lg:hidden">
-                        <button id="nav-open-btn" type="button" class="p-2 rounded-md text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/5 dark:hover:bg-white/10" aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <ion-icon name="menu-outline" class="text-3xl"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="lg:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-light-surface dark:bg-dark-surface">
-                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium">Features</a>
-                <a href="#characters" class="block px-3 py-2 rounded-md text-base font-medium">Characters</a>
-                <a href="#overview" class="block px-3 py-2 rounded-md text-base font-medium">Overview</a>
-                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium">Blog</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="relative min-h-[90vh] flex items-center justify-center text-center overflow-hidden pt-24 pb-16" id="home">
-            <!-- Background Decoration -->
-            <div class="absolute inset-0 z-0 bg-gradient-to-b from-gray-50 to-orange-50 dark:from-dark-bg dark:to-orange-900/10"></div>
-            <div class="absolute top-[15%] left-[10%] w-48 h-48 bg-orange-200 rounded-full filter blur-3xl opacity-50 animate-pulse-slow dark:bg-orange-800/30"></div>
-            <div class="absolute bottom-[15%] right-[10%] w-56 h-56 bg-purple-200 rounded-full filter blur-3xl opacity-40 animate-pulse-slow animation-delay-3000 dark:bg-purple-900/20"></div>
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div class="relative mb-12 md:mb-20" data-aos="fade-up" data-aos-delay="300">
-        <div class="mx-auto max-w-[95%] sm:max-w-[85%] md:max-w-[75%] lg:max-w-[65%] xl:max-w-[55%] mb-12 md:mb-20">
-  <img 
-    src="./assets/images/banner_logo.png" 
-    alt="AniTrain App Showcase"
-    class="w-full h-auto mx-auto relative z-10 shadow-2xl rounded-[40px]"
-  />
-</div>
-
-
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-5" data-aos="fade-up">
-                        <span class="text-anitrain-orange">Ani</span>Train
-                    </h1>
-                    <p class="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8" data-aos="fade-up" data-aos-delay="100">
-                        Train Like a <span class="font-semibold text-light-text-primary dark:text-dark-text-primary">Hero</span>. Sweat Like a <span class="font-semibold text-light-text-primary dark:text-dark-text-primary">Saiyan</span>.
-                    </p>
-                    <div class="flex justify-center items-center space-x-4 mb-12" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#" class="block transform hover:scale-105 transition-transform">
-                            <img src="https://placehold.co/180x53/000000/FFFFFF?text=App+Store&font=Poppins" alt="Download on the App Store" class="h-14 w-auto rounded-lg shadow-md">
-                        </a>
-                        <a href="#" class="block transform hover:scale-105 transition-transform">
-                            <img src="https://placehold.co/180x53/000000/FFFFFF?text=Google+Play&font=Poppins" alt="Get it on Google Play" class="h-14 w-auto rounded-lg shadow-md">
-                        </a>
-                    </div>
-
-                   
-                </div>
-            </div>
-        </section>
-
-        <!-- NOTE: The "Achievements" section has been removed as requested. -->
-        
-        <!-- The rest of your original content, now adapted for light/dark mode -->
-
-        <section class="py-16 lg:py-24 bg-light-bg-secondary dark:bg-dark-bg-secondary" id="features">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 lg:mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold" data-aos="fade-up">App Features</h2>
-      <p class="mt-4 max-w-2xl mx-auto text-light-text-secondary dark:text-dark-text-secondary" data-aos="fade-up" data-aos-delay="100">
-        Explore the features that make training fun and effective.
-      </p>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-12 lg:gap-8 items-center">
-      <!-- Left Column -->
-      <ul class="space-y-10 lg:text-right" data-aos="fade-right">
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">Anime Character Workouts</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Train with Saitama, Goku, Luffy, and more with routines inspired by their unique training styles.
-          </p>
-        </li>
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">XP & Level-Up System</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Earn XP, level up, and unlock new modes by consistently completing workouts.
-          </p>
-        </li>
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">Weekly Challenge: Yoga & Running</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Choose from 100+ 7-day plans including focused yoga, running, HIIT, and recovery modes.
-          </p>
-        </li>
-      </ul>
-
-      <!-- Center Image -->
-      <figure class="relative my-10 lg:my-0" data-aos="zoom-in">
-        <img src="./assets/images/feature-banner-bg.png" alt="circle audio waveform" class="absolute inset-0 w-full h-full object-contain opacity-10 dark:opacity-5 animate-pulse-slow">
-        <img src="./assets/images/feature-banner.png" alt="AniTrain app interface" class="relative max-w-xs mx-auto lg:max-w-sm shadow-2xl rounded-3xl">
-      </figure>
-
-      <!-- Right Column -->
-      <ul class="space-y-10" data-aos="fade-left">
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">Streak & Beast Mode</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Stay motivated with streak rewards and intense anime-themed beast mode challenges.
-          </p>
-        </li>
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">Train Multiple Characters</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Add up to 5 anime characters to your active roster and switch workouts anytime.
-          </p>
-        </li>
-        <li class="features-item">
-          <h3 class="text-2xl font-semibold mb-3 text-anitrain-orange">Smart Workout AI (Beta)</h3>
-          <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
-            Get AI-generated plans based on your level, goals, and anime preferences — like having a virtual coach.
-          </p>
-        </li>
-      </ul>
+<body id="top" class="font-poppins bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-secondary gradient-bg">
+  <!-- GoFundMe Modal -->
+  <div id="gofundme-modal">
+    <button class="modal-close-btn bg-black/20 dark:bg-white/20 text-white">&times;</button>
+    <div class="modal-content bg-white dark:bg-dark-surface rounded-3xl overflow-hidden shadow-2xl border border-dark-border">
+      <div class="gfm-embed" data-url="https://www.gofundme.com/f/help-anitrain-animeinspired-fitness-app/widget/large?sharesheet=undefined&attribution_id=sl:f609eeb2-45d7-4385-b06e-73b09aecca79"></div>
     </div>
   </div>
-</section>
 
-<section class="py-16 lg:py-24 bg-light-bg dark:bg-dark-bg" id="characters">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 lg:mb-16" data-aos="fade-up">Meet the Legends</h2>
+  <!-- Launch Popup -->
+  <div id="launch-popup" class="hidden">
+    <div class="popup-content relative text-center">
+      <button id="popup-close-btn" class="popup-close-btn">&times;</button>
+      <img src="./anitrain-logo.png" alt="AniTrain Logo" class="w-24 h-24 mx-auto mb-5 rounded-full border-4 border-anitrain-orange shadow-lg animate-float" onerror="this.onerror=null;this.src='https://placehold.co/96x96/101010/FF951A?text=AT';">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2">
+        <span class="text-anitrain-orange animate-glow">AniTrain</span> App Coming Soon!
+      </h2>
+      <p class="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8">
+        The best anime fitness app.
+      </p>
+      <button id="stay-tuned-btn" class="w-full px-8 py-4 bg-anitrain-orange text-white font-bold text-lg rounded-full shadow-xl hover:bg-anitrain-orange-dark transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
+        Stay Tuned
+      </button>
+    </div>
+  </div>
 
-    <div class="relative overflow-hidden">
-      <div id="auto-rotate-track" class="flex gap-10 w-max animate-character-scroll will-change-transform">
-        <!-- Character items -->
-        <!-- Repeat block with different names/images -->
-        <template id="character-template">
-          <div class="character-item flex-none w-32 sm:w-36 md:w-40 group">
-            <img src="" alt="" class="w-full h-32 sm:h-36 md:h-40 object-cover rounded-full border-4 border-anitrain-orange shadow-lg transition-transform duration-500">
-            <p class="mt-4 text-center font-semibold text-lg text-light-text-primary dark:text-dark-text-primary"></p>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="#home" class="flex-shrink-0 animate-bounce">
+          <img src="./anitrain-logo.png" alt="AniTrain logo" class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-lg border-2 border-anitrain-orange" onerror="this.onerror=null;this.src='https://placehold.co/56x56/101010/FF951A?text=AT';">
+        </a>
+        <nav class="hidden lg:flex lg:items-center lg:space-x-8">
+          <a href="#features" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Features</a>
+          <a href="#characters" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Characters</a>
+          <a href="#reviews" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Testimonials</a>
+          <a href="./blog.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">News</a>
+        </nav>
+        <div class="flex items-center space-x-3 sm:space-x-4">
+          <button id="support-btn" class="px-6 py-3 bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
+            💖 Support Us
+          </button>
+          <!-- THEME TOGGLE BUTTON - UPDATED -->
+          <button id="theme-toggle" type="button" class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 focus:outline-none transition-colors">
+            <ion-icon name="sunny-outline" class="text-xl inline dark:hidden text-yellow-400"></ion-icon>
+            <ion-icon name="moon-outline" class="text-xl hidden dark:inline text-white"></ion-icon>
+          </button>
+          <div class="lg:hidden">
+            <button id="nav-open-btn" type="button" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20">
+              <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
+            </button>
           </div>
-        </template>
-      </div>
-    </div>
-  </div>
-</section>
-
-        
-        <!-- Continue adapting other sections similarly -->
-
-    </main>
-<section class="py-16 lg:py-24 bg-light-bg dark:bg-dark-bg" id="reviews">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 lg:mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold" data-aos="fade-up">What Users Are Saying</h2>
-      <p class="mt-4 max-w-2xl mx-auto text-light-text-secondary dark:text-dark-text-secondary" data-aos="fade-up" data-aos-delay="100">
-        Hear from real AniTrain users who’ve unlocked their inner hero.
-      </p>
-    </div>
-
-    <!-- Slider -->
-    <div class="overflow-hidden relative">
-      <div id="reviewSlider" class="flex transition-all duration-700 ease-in-out">
-        <!-- Each review item (repeat this 10x) -->
-        <!-- Just 1 example shown below, full 10 shown in next step -->
-         <div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U1" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Alex T.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
         </div>
       </div>
     </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      Training with Goku and Luffy kept me consistent! I never skipped a day.
-    </p>
-  </article>
-</div>
-<!-- Review 11 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U11" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Nina K.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
+    <div class="lg:hidden hidden bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border" id="mobile-menu">
+      <div class="px-4 pt-3 pb-4 space-y-3">
+        <a href="#features" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Features</a>
+        <a href="#characters" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Characters</a>
+        <a href="#reviews" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Testimonials</a>
+        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">News</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-28 pb-20 text-center" data-aos="fade-up">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Full-Width Banner Image -->
+        <div class="max-w-5xl mx-auto mb-12 md:mb-16">
+          <img 
+            src="./assets/images/banner_logo.png" 
+            alt="AniTrain App Showcase" 
+            class="hero-banner w-full h-auto cta-float"
+            onerror="this.onerror=null;this.src='https://placehold.co/1024x576/1a1a1a/ffffff?text=AniTrain+Banner';"
+          >
+        </div>
+        <!-- Title & CTA -->
+        <h1 class="text-6xl md:text-8xl font-extrabold mb-5 tracking-tight">
+          <span class="text-anitrain-orange">Ani</span>Train
+        </h1>
+        <p class="text-xl md:text-2xl text-light-text-secondary dark:text-dark-text-secondary mb-10 max-w-3xl mx-auto leading-relaxed">
+          Train Like a <span class="font-bold text-anitrain-orange">Hero</span>. Sweat Like a <span class="font-bold text-anitrain-orange">Saiyan</span>. Transform Like a <span class="font-bold underline">Legend</span>.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <a href="#" class="transform hover:scale-105 transition-transform">
+            <img src="https://placehold.co/180x53/000000/FFFFFF?text=App+Store&font=Poppins" alt="App Store" class="h-14 w-auto rounded-xl shadow-lg">
+          </a>
+          <a href="#" class="transform hover:scale-105 transition-transform">
+            <img src="https://placehold.co/180x53/000000/FFFFFF?text=Google+Play&font=Poppins" alt="Google Play" class="h-14 w-auto rounded-xl shadow-lg">
+          </a>
         </div>
       </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      AniTrain makes me excited to wake up and train every morning. So motivating!
-    </p>
-  </article>
-</div>
+    </section>
 
-<!-- Review 12 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U12" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Leo D.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
+    <!-- Features -->
+    <section id="features" class="py-20 lg:py-28 bg-light-bg-secondary dark:bg-dark-bg-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 lg:mb-20">
+          <h2 class="text-4xl lg:text-5xl font-bold" data-aos="fade-up">Power Up Your Fitness</h2>
+          <p class="mt-5 max-w-2xl mx-auto text-lg text-light-text-secondary dark:text-dark-text-secondary" data-aos="fade-up" data-aos-delay="100">
+            Level up with anime-powered training, XP, and legendary challenges.
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-12 lg:gap-10 items-start">
+          <ul class="space-y-8 lg:text-right">
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-right">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="flame-outline" class="mr-2"></ion-icon>
+                Anime Workouts
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Train with Goku, Luffy, Saitama, and more in immersive, story-driven routines.</p>
+            </li>
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-right" data-aos-delay="100">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="body-outline" class="mr-2"></ion-icon>
+                Beast Mode
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Unlock intense challenges after 7-day streaks. Go beyond human limits.</p>
+            </li>
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-right" data-aos-delay="200">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="sparkles-outline" class="mr-2"></ion-icon>
+                AI Training Plans
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Smart routines based on your goals, progress, and favorite anime.</p>
+            </li>
+          </ul>
+          <figure data-aos="zoom-in" class="my-8 lg:my-0 flex justify-center">
+            <img src="./assets/images/feature-banner.png" alt="AniTrain App Interface" class="max-w-xs mx-auto lg:max-w-md shadow-2xl rounded-3xl border-4 border-anitrain-orange/20" onerror="this.onerror=null;this.src='https://placehold.co/320x640/1a1a1a/ffffff?text=App+Screenshot';">
+          </figure>
+          <ul class="space-y-8">
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-left">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="trophy-outline" class="mr-2"></ion-icon>
+                XP & Levels
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Earn XP, level up, and unlock rewards, badges, and new characters.</p>
+            </li>
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-left" data-aos-delay="100">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="people-outline" class="mr-2"></ion-icon>
+                Multi-Character Roster
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Switch between 5 favorite heroes anytime. Become the ultimate warrior.</p>
+            </li>
+            <li class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-soft hover:shadow-hard transition-all transform hover:-translate-y-2" data-aos="fade-left" data-aos-delay="200">
+              <h3 class="text-2xl font-bold text-anitrain-orange mb-4 flex items-center">
+                <ion-icon name="calendar-outline" class="mr-2"></ion-icon>
+                Weekly Challenges
+              </h3>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary">Yoga, HIIT, running — all themed weekly. Stay motivated!</p>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      The UI feels like an anime game. I’ve never been this hooked on a fitness app.
-    </p>
-  </article>
-</div>
+    </section>
 
-<!-- Review 13 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U13" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Aya L.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
+    <!-- Characters -->
+    <section id="characters" class="py-20 lg:py-28 bg-light-bg dark:bg-dark-bg">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16 lg:mb-20" data-aos="fade-up">Meet the Legends</h2>
+        <div class="relative overflow-hidden">
+          <div id="auto-rotate-track" class="flex gap-10 w-max animate-character-scroll will-change-transform">
+            <template id="character-template">
+              <div class="character-item flex-none w-32 sm:w-36 md:w-40 group">
+                <img src="" alt="" class="w-full h-32 sm:h-36 md:h-40 object-cover rounded-full shadow-lg">
+                <p class="mt-4 text-center font-bold text-lg text-anitrain-orange"></p>
+              </div>
+            </template>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      The weekly challenges like yoga and cardio helped me stay flexible and energized.
-    </p>
-  </article>
-</div>
+    </section>
 
-<!-- Review 14 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U14" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Marcus V.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
+    <!-- Testimonials -->
+    <section id="reviews" class="py-20 lg:py-28 bg-light-bg-secondary dark:bg-dark-bg-secondary">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 lg:mb-20">
+          <h2 class="text-4xl lg:text-5xl font-bold" data-aos="fade-up">Testimonials from the Dojo</h2>
+          <p class="mt-5 max-w-2xl mx-auto text-lg text-light-text-secondary dark:text-dark-text-secondary" data-aos="fade-up" data-aos-delay="100">
+            Warriors share their transformation journey.
+          </p>
+        </div>
+        <div class="overflow-hidden" id="reviewSliderContainer">
+          <div id="reviewSlider" class="flex transition-all duration-700 ease-in-out">
+            <!-- Reviews -->
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4" data-aos="fade-up">
+              <div class="review-card bg-white dark:bg-dark-surface p-7 rounded-2xl shadow-lg mx-auto max-w-lg border border-light-border dark:border-dark-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <img src="https://placehold.co/48x48?text=AT" alt="User" class="w-12 h-12 rounded-full border-2 border-anitrain-orange">
+                  <div>
+                    <p class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Alex T.</p>
+                    <div class="text-yellow-400 text-sm">5 ★★★★★</div>
+                  </div>
+                </div>
+                <div class="speech-bubble relative bg-white dark:bg-dark-surface px-5 py-4 rounded-xl italic text-light-text-secondary dark:text-dark-text-secondary shadow-md">"Training with Goku and Luffy kept me consistent!"</div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="review-card bg-white dark:bg-dark-surface p-7 rounded-2xl shadow-lg mx-auto max-w-lg border border-light-border dark:border-dark-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <img src="https://placehold.co/48x48?text=NK" alt="User" class="w-12 h-12 rounded-full border-2 border-anitrain-orange">
+                  <div>
+                    <p class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Nina K.</p>
+                    <div class="text-yellow-400 text-sm">5 ★★★★★</div>
+                  </div>
+                </div>
+                <div class="speech-bubble relative bg-white dark:bg-dark-surface px-5 py-4 rounded-xl italic text-light-text-secondary dark:text-dark-text-secondary shadow-md">"I wake up excited to train every morning!"</div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="review-card bg-white dark:bg-dark-surface p-7 rounded-2xl shadow-lg mx-auto max-w-lg border border-light-border dark:border-dark-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <img src="https://placehold.co/48x48?text=LD" alt="User" class="w-12 h-12 rounded-full border-2 border-anitrain-orange">
+                  <div>
+                    <p class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Leo D.</p>
+                    <div class="text-yellow-400 text-sm">5 ★★★★★</div>
+                  </div>
+                </div>
+                <div class="speech-bubble relative bg-white dark:bg-dark-surface px-5 py-4 rounded-xl italic text-light-text-secondary dark:text-dark-text-secondary shadow-md">"Feels like I'm in an anime game!"</div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="review-card bg-white dark:bg-dark-surface p-7 rounded-2xl shadow-lg mx-auto max-w-lg border border-light-border dark:border-dark-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <img src="https://placehold.co/48x48?text=AY" alt="User" class="w-12 h-12 rounded-full border-2 border-anitrain-orange">
+                  <div>
+                    <p class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Aya L.</p>
+                    <div class="text-yellow-400 text-sm">5 ★★★★★</div>
+                  </div>
+                </div>
+                <div class="speech-bubble relative bg-white dark:bg-dark-surface px-5 py-4 rounded-xl italic text-light-text-secondary dark:text-dark-text-secondary shadow-md">"Yoga challenges keep me flexible and energized."</div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 flex-shrink-0 px-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="review-card bg-white dark:bg-dark-surface p-7 rounded-2xl shadow-lg mx-auto max-w-lg border border-light-border dark:border-dark-border">
+                <div class="flex items-center gap-4 mb-4">
+                  <img src="https://placehold.co/48x48?text=MD" alt="User" class="w-12 h-12 rounded-full border-2 border-anitrain-orange">
+                  <div>
+                    <p class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Marcus V.</p>
+                    <div class="text-yellow-400 text-sm">5 ★★★★★</div>
+                  </div>
+                </div>
+                <div class="speech-bubble relative bg-white dark:bg-dark-surface px-5 py-4 rounded-xl italic text-light-text-secondary dark:text-dark-text-secondary shadow-md">"I feel like I'm leveling up in real life!"</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      I feel like I'm leveling up in real life, just like my favorite anime characters.
-    </p>
-  </article>
-</div>
+    </section>
+  </main>
 
-<!-- Review 15 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U15" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Emily Z.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
+  <!-- Footer -->
+  <footer class="bg-light-bg-secondary dark:bg-dark-bg-secondary pt-20 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-light-border dark:border-dark-border pt-10 text-center space-y-3">
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed">
+          &copy; <span id="currentYear"></span> AniTrain. All rights reserved. Unleash Your Inner Hero.
+        </p>
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+          Built with ❤️ by <a href="https://programmerukesh.com" target="_blank" class="text-anitrain-orange hover:underline font-medium">programmerukesh.com</a>
+        </p>
       </div>
     </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      Finally, an anime fitness app that motivates me to move every day. Highly recommended!
-    </p>
-  </article>
-</div>
+  </footer>
 
-<!-- Review 16 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U16" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Samir N.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
-      </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      The community section keeps me accountable. I love posting my daily wins!
-    </p>
-  </article>
-</div>
+  <!-- Go to Top Button -->
+  <a href="#top" id="go-top" class="fixed bottom-6 right-6 z-50 p-4 bg-anitrain-orange text-white rounded-full shadow-lg hover:bg-anitrain-orange-dark transition-all opacity-0 pointer-events-none duration-300">
+    <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+  </a>
 
-<!-- Review 17 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U17" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Laura H.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
-      </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      It’s the only app that keeps my son excited about fitness. He loves the avatars!
-    </p>
-  </article>
-</div>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://www.gofundme.com/static/js/embed.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
 
-<!-- Review 18 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U18" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Jun K.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
-      </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      Beast Mode really pushes my limits. I use it every Saturday!
-    </p>
-  </article>
-</div>
+    // --- LAUNCH POPUP SCRIPT ---
+    const launchPopup = document.getElementById('launch-popup');
+    const popupCloseBtn = document.getElementById('popup-close-btn');
+    const stayTunedBtn = document.getElementById('stay-tuned-btn');
+    const POPUP_COOKIE = 'anitrain_popup_seen_v2';
+    const getCookie = (name) => `; ${document.cookie}`.split(`; ${name}=`).pop()?.split(';').shift();
+    const setCookie = (name, value, days) => {
+      const expires = days ? new Date(Date.now() + days * 864e5).toUTCString() : '';
+      document.cookie = name + '=' + value + (expires ? '; expires=' + expires : '') + '; path=/';
+    };
+    const showLaunchPopup = () => {
+      if (!getCookie(POPUP_COOKIE)) {
+        setTimeout(() => {
+          launchPopup?.classList.remove('hidden');
+          setTimeout(() => launchPopup?.classList.add('show'), 50);
+        }, 600);
+      }
+    };
+    const hideLaunchPopup = () => {
+      launchPopup?.classList.remove('show');
+      setTimeout(() => launchPopup?.classList.add('hidden'), 400);
+      setCookie(POPUP_COOKIE, 'true', 30);
+    };
+    popupCloseBtn?.addEventListener('click', hideLaunchPopup);
+    stayTunedBtn?.addEventListener('click', hideLaunchPopup);
+    launchPopup?.addEventListener('click', e => e.target === launchPopup && hideLaunchPopup());
+    window.addEventListener('load', showLaunchPopup);
 
-<!-- Review 19 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U19" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Clara J.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
-      </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      The anime music background keeps me pumped up. Perfect for solo workouts.
-    </p>
-  </article>
-</div>
+    // --- GoFundMe Modal ---
+    const supportBtn = document.getElementById('support-btn');
+    const gofundmeModal = document.getElementById('gofundme-modal');
+    const modalCloseBtn = document.querySelector('#gofundme-modal .modal-close-btn');
 
-<!-- Review 20 -->
-<div class="w-full md:w-1/2 flex-shrink-0 px-4" itemscope itemtype="https://schema.org/Review">
-  <article class="bg-light-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg mx-auto max-w-lg">
-    <div class="flex items-center gap-4 mb-4">
-      <img src="https://placehold.co/48x48?text=U20" alt="User avatar" class="w-12 h-12 rounded-full" />
-      <div>
-        <p class="font-semibold text-lg" itemprop="author">Diego M.</p>
-        <div class="text-yellow-400 text-sm" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <span itemprop="ratingValue">5</span> ★★★★★
-        </div>
-      </div>
-    </div>
-    <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed" itemprop="reviewBody">
-      I joined for the characters, but I stayed for the results. I feel stronger already.
-    </p>
-  </article>
-</div>
+    supportBtn?.addEventListener('click', () => {
+      gofundmeModal?.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+    modalCloseBtn?.addEventListener('click', () => {
+      gofundmeModal?.classList.remove('show');
+      setTimeout(() => document.body.style.overflow = '', 400);
+    });
+    gofundmeModal?.addEventListener('click', (e) => {
+      if (e.target === gofundmeModal) {
+        gofundmeModal.classList.remove('show');
+        setTimeout(() => document.body.style.overflow = '', 400);
+      }
+    });
 
-      </div>
-    </div>
-  </div>
-</section>
+    // Character Carousel
+    const characters = [
+      { name: "Goku", img: "https://placehold.co/150x150/FF951A/FFF?text=Goku" },
+      { name: "Naruto", img: "https://placehold.co/150x150/FF951A/FFF?text=Naruto" },
+      { name: "Luffy", img: "https://placehold.co/150x150/FF951A/FFF?text=Luffy" },
+      { name: "Saitama", img: "https://placehold.co/150x150/FF951A/FFF?text=Saitama" },
+      { name: "Vegeta", img: "https://placehold.co/150x150/FF951A/FFF?text=Vegeta" },
+      { name: "Ichigo", img: "https://placehold.co/150x150/FF951A/FFF?text=Ichigo" },
+      { name: "Levi", img: "https://placehold.co/150x150/FF951A/FFF?text=Levi" },
+      { name: "Tanjiro", img: "https://placehold.co/150x150/FF951A/FFF?text=Tanjiro" },
+      { name: "Asta", img: "https://placehold.co/150x150/FF951A/FFF?text=Asta" },
+      { name: "Deku", img: "https://placehold.co/150x150/FF951A/FFF?text=Deku" },
+      { name: "Zoro", img: "https://placehold.co/150x150/FF951A/FFF?text=Zoro" },
+      { name: "Gojo", img: "https://placehold.co/150x150/FF951A/FFF?text=Gojo" },
+      { name: "Itachi", img: "https://placehold.co/150x150/FF951A/FFF?text=Itachi" },
+      { name: "Killua", img: "https://placehold.co/150x150/FF951A/FFF?text=Killua" },
+      { name: "Meliodas", img: "https://placehold.co/150x150/FF951A/FFF?text=Meliodas" },
+    ];
+    const track = document.getElementById("auto-rotate-track");
+    const template = document.getElementById("character-template").content;
+    if (track && template) {
+      const allCharacters = [...characters, ...characters];
+      allCharacters.forEach((char) => {
+        const node = template.cloneNode(true);
+        const img = node.querySelector("img");
+        const p = node.querySelector("p");
+        if (img) img.src = char.img;
+        if (p) p.textContent = char.name;
+        track.appendChild(node);
+      });
+    }
 
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    // On page load, check local storage and apply the theme
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggle?.classList.add('saiyan');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
 
+    themeToggle?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      isDark ? themeToggle.classList.add('saiyan') : themeToggle.classList.remove('saiyan');
+    });
 
+    // Mobile Menu
+    const navOpenBtn = document.getElementById('nav-open-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navOpenBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = navOpenBtn.querySelector('ion-icon');
+      if (icon) icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
+    });
 
-    <footer class="bg-light-bg-secondary dark:bg-dark-bg-secondary pt-16 pb-8">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="border-t border-light-border dark:border-dark-border pt-8 text-center space-y-2">
-      <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
-        &copy; <span id="currentYear"></span> AniTrain. All rights reserved. Unleash Your Inner Hero.
-      </p>
-      <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
-        Built with ❤️ by <a href="https://programmerukesh.com" target="_blank" rel="noopener noreferrer" class="text-anitrain-orange hover:underline">programmerukesh.com</a>
-      </p>
-    </div>
-  </div>
-</footer>
+    // Go to Top
+    const goTop = document.getElementById('go-top');
+    window.addEventListener('scroll', () => {
+      if (goTop) {
+        goTop.classList.toggle('opacity-0', window.scrollY < 400);
+        goTop.classList.toggle('pointer-events-none', window.scrollY < 400);
+      }
+    });
 
+    // Review Slider Auto-scroll
+    const slider = document.getElementById("reviewSlider");
+    const container = document.getElementById("reviewSliderContainer");
+    let idx = 0;
+    let slideInterval;
+    function autoSlide() {
+      if (!slider) return;
+      const visible = window.innerWidth >= 768 ? 2 : 1;
+      const total = slider.children.length;
+      if (total <= visible) return;
+      idx = (idx + 1) % (total - visible + 1);
+      slider.style.transform = `translateX(-${(idx * 100 / visible)}%)`;
+    }
+    if (container && slider) {
+      slideInterval = setInterval(autoSlide, 4000);
+      container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      container.addEventListener('mouseleave', () => slideInterval = setInterval(autoSlide, 4000));
+    }
 
-    <a href="#top" id="go-top" class="fixed bottom-6 right-6 z-50 p-3 bg-anitrain-orange text-white rounded-full shadow-lg hover:bg-anitrain-orange-dark transition-all duration-300 ease-in-out opacity-0 pointer-events-none">
-        <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
-    </a>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-  const slider = document.getElementById("reviewSlider");
-  let currentIndex = 0;
-
-  function slideReviews() {
-    const totalItems = slider.children.length;
-    const visibleItems = window.innerWidth >= 768 ? 2 : 1;
-    const totalSlides = totalItems - visibleItems + 1;
-
-    currentIndex = (currentIndex + 1) % totalSlides;
-    const offset = currentIndex * (100 / visibleItems);
-
-    slider.style.transform = `translateX(-${offset}%)`;
-  }
-
-  setInterval(slideReviews, 4000); // Auto-slide every 4s
-</script>
-
-    <script>
-          document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-        AOS.init({
-            once: true,
-            mirror: false,
-            duration: 700,
-            easing: 'ease-out-cubic',
-        });
-const characters = [
-  { name: "Goku", img: "https://placehold.co/150x150/FF951A/FFF?text=Goku" },
-  { name: "Naruto", img: "https://placehold.co/150x150/FF951A/FFF?text=Naruto" },
-  { name: "Luffy", img: "https://placehold.co/150x150/FF951A/FFF?text=Luffy" },
-  { name: "Saitama", img: "https://placehold.co/150x150/FF951A/FFF?text=Saitama" },
-  { name: "Vegeta", img: "https://placehold.co/150x150/FF951A/FFF?text=Vegeta" },
-  { name: "Ichigo", img: "https://placehold.co/150x150/FF951A/FFF?text=Ichigo" },
-  { name: "Levi", img: "https://placehold.co/150x150/FF951A/FFF?text=Levi" },
-  { name: "Tanjiro", img: "https://placehold.co/150x150/FF951A/FFF?text=Tanjiro" },
-  { name: "Asta", img: "https://placehold.co/150x150/FF951A/FFF?text=Asta" },
-  { name: "Deku", img: "https://placehold.co/150x150/FF951A/FFF?text=Deku" },
-  { name: "Zoro", img: "https://placehold.co/150x150/FF951A/FFF?text=Zoro" },
-  { name: "Gojo", img: "https://placehold.co/150x150/FF951A/FFF?text=Gojo" },
-  { name: "Itachi", img: "https://placehold.co/150x150/FF951A/FFF?text=Itachi" },
-  { name: "Killua", img: "https://placehold.co/150x150/FF951A/FFF?text=Killua" },
-  { name: "Meliodas", img: "https://placehold.co/150x150/FF951A/FFF?text=Meliodas" },
-];
-
-const track = document.getElementById("auto-rotate-track");
-const template = document.getElementById("character-template").content;
-
-characters.forEach((char, i) => {
-  const node = template.cloneNode(true);
-  const img = node.querySelector("img");
-  const name = node.querySelector("p");
-
-  img.src = char.img;
-  img.alt = char.name;
-  name.textContent = char.name;
-
-  const deg = (i % 3 - 1) * 10; // -10°, 0°, +10°
-  const scale = 0.85 + Math.random() * 0.2;
-  const offsetY = Math.random() * 10 - 5;
-
-  img.style.transform = `rotate(${deg}deg) scale(${scale}) translateY(${offsetY}px)`;
-
-  track.appendChild(node);
-});
-
-        // --- Theme Toggler Script ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        
-        // Set initial theme based on localStorage or system preference
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-
-        // Mobile Menu Toggle
-        const navOpenBtn = document.getElementById('nav-open-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (navOpenBtn && mobileMenu) {
-            navOpenBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const isExpanded = navOpenBtn.getAttribute('aria-expanded') === 'true' || false;
-                navOpenBtn.setAttribute('aria-expanded', !isExpanded);
-                navOpenBtn.querySelector('ion-icon').name = !isExpanded ? 'close-outline' : 'menu-outline';
-            });
-            
-            mobileMenu.addEventListener('click', (event) => {
-                if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON') {
-                    mobileMenu.classList.add('hidden');
-                    navOpenBtn.setAttribute('aria-expanded', 'false');
-                    navOpenBtn.querySelector('ion-icon').name = 'menu-outline';
-                }
-            });
-        }
-
-        // Go To Top Button
-        const goTopBtn = document.getElementById('go-top');
-        if(goTopBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    goTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                } else {
-                    goTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                }
-            });
-        }
-
-        // Copyright Year
-        const currentYearEl = document.getElementById('currentYear');
-        if(currentYearEl) {
-            currentYearEl.textContent = new Date().getFullYear();
-        }
-    </script>
+    // Year
+    const currentYearEl = document.getElementById('currentYear');
+    if(currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
