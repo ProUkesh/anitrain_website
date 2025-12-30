@@ -6,6 +6,8 @@
       { "source": "/privacy.html", "destination": "/privacy.html" },
       { "source": "/blog.html", "destination": "/blog.html" },
       { "source": "/game.html", "destination": "/game.html" },
+      { "source": "/delete-account.html", "destination": "/delete-account.html" },
+
       { "source": "**", "destination": "/index.html" }
     ]
   }

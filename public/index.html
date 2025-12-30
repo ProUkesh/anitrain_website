@@ -205,23 +205,7 @@
     </div>
   </div>
 
-  <!-- Launch Popup -->
-  <div id="launch-popup" class="hidden">
-    <div class="popup-content relative text-center">
-      <button id="popup-close-btn" class="popup-close-btn">&times;</button>
-      <img src="./anitrain-logo.png" alt="AniTrain Logo" class="w-24 h-24 mx-auto mb-5 rounded-full border-4 border-anitrain-orange shadow-lg animate-float" onerror="this.onerror=null;this.src='https://placehold.co/96x96/101010/FF951A?text=AT';">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2">
-        <span class="text-anitrain-orange animate-glow">AniTrain</span> App Coming Soon!
-      </h2>
-      <p class="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8">
-        The best anime fitness app.
-      </p>
-      <button id="stay-tuned-btn" class="w-full px-8 py-4 bg-anitrain-orange text-white font-bold text-lg rounded-full shadow-xl hover:bg-anitrain-orange-dark transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
-        Stay Tuned
-      </button>
-    </div>
-  </div>
-
+ 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -353,7 +337,29 @@
             </li>
           </ul>
         </div>
+        <!-- Upcoming Features -->
+<div class="mt-16 bg-white dark:bg-dark-surface rounded-3xl p-10 shadow-soft border border-light-border dark:border-dark-border" data-aos="fade-up">
+  <h3 class="text-3xl font-bold text-center mb-8 text-anitrain-orange">
+    What’s Coming Next 🚀
+  </h3>
+
+  <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-light-text-secondary dark:text-dark-text-secondary text-base">
+    <li>📖 <strong>Story Mode</strong> – Anime-inspired training arcs</li>
+    <li>🎮 <strong>Anime Games</strong> – Fun mini-games to earn XP</li>
+    <li>🌸 <strong>Seasonal Events</strong> – Limited-time challenges</li>
+    <li>🧠 <strong>Anime Quiz Battles</strong> – Test knowledge, gain XP</li>
+    <li>🔓 <strong>Character Unlocks</strong> – Progress-based rewards</li>
+    <li>🕵️ <strong>Guess the Imposter</strong> – Anime-style social game</li>
+    <li>⚔️ <strong>Community Battles</strong> – Compete with global warriors</li>
+    <li>🤖 <strong>AI Workout Tracking</strong> – Smart performance insights</li>
+    <li>👕 <strong>Official Merchandise</strong> – Wear your warrior pride</li>
+    <li>🤝 <strong>Anime Partnerships</strong> – Creator & studio collabs</li>
+    <li>🏆 <strong>Monthly Top Warrior Rewards</strong> – Exclusive merch</li>
+  </ul>
+</div>
+
       </div>
+      
     </section>
 
     <!-- Characters -->
@@ -478,34 +484,7 @@
     // Initialize AOS
     AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
 
-    // --- LAUNCH POPUP SCRIPT ---
-    const launchPopup = document.getElementById('launch-popup');
-    const popupCloseBtn = document.getElementById('popup-close-btn');
-    const stayTunedBtn = document.getElementById('stay-tuned-btn');
-    const POPUP_COOKIE = 'anitrain_popup_seen_v2';
-    const getCookie = (name) => `; ${document.cookie}`.split(`; ${name}=`).pop()?.split(';').shift();
-    const setCookie = (name, value, days) => {
-      const expires = days ? new Date(Date.now() + days * 864e5).toUTCString() : '';
-      document.cookie = name + '=' + value + (expires ? '; expires=' + expires : '') + '; path=/';
-    };
-    const showLaunchPopup = () => {
-      if (!getCookie(POPUP_COOKIE)) {
-        setTimeout(() => {
-          launchPopup?.classList.remove('hidden');
-          setTimeout(() => launchPopup?.classList.add('show'), 50);
-        }, 600);
-      }
-    };
-    const hideLaunchPopup = () => {
-      launchPopup?.classList.remove('show');
-      setTimeout(() => launchPopup?.classList.add('hidden'), 400);
-      setCookie(POPUP_COOKIE, 'true', 30);
-    };
-    popupCloseBtn?.addEventListener('click', hideLaunchPopup);
-    stayTunedBtn?.addEventListener('click', hideLaunchPopup);
-    launchPopup?.addEventListener('click', e => e.target === launchPopup && hideLaunchPopup());
-    window.addEventListener('load', showLaunchPopup);
-
+    
     // --- GoFundMe Modal ---
     const supportBtn = document.getElementById('support-btn');
     const gofundmeModal = document.getElementById('gofundme-modal');
