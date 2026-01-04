@@ -1,25 +1,38 @@
+<!-- /public/blog.html -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>AniTrain News & Updates</title>
-  <meta name="description" content="Stay updated with the latest news, articles, and updates from AniTrain, the ultimate anime fitness app.">
+  <meta name="description" content="Stay updated with the latest AniTrain news, articles, app updates, and anime fitness tips." />
+  <meta name="keywords" content="AniTrain, anime fitness, anime workouts, AniTrain app, anime gym, anime training, anime news, anime reviews, workout tips" />
   <meta name="author" content="programmerukesh.com" />
   <link rel="canonical" href="https://anitrain.app/blog.html" />
   <meta name="robots" content="index, follow" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-  <!-- Scripts & Fonts -->
+  <!-- OG/Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AniTrain News & Updates" />
+  <meta property="og:description" content="Latest AniTrain news, updates, and anime fitness content." />
+  <meta property="og:url" content="https://anitrain.app/blog.html" />
+  <meta property="og:site_name" content="AniTrain" />
+  <meta property="og:image" content="https://anitrain.app/preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AniTrain News & Updates" />
+  <meta name="twitter:description" content="Latest AniTrain news, updates, and anime fitness content." />
+
+  <!-- Tailwind + Fonts + Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -41,185 +54,156 @@
             'light-text-secondary': 'hsl(240, 4%, 35%)',
             'light-border': 'hsl(240, 10%, 90%)',
           },
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
-          animation: {
-            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 6s ease-in-out infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' }
-            },
-            glow: {
-              'from': { textShadow: '0 0 10px rgba(255,149,26,0.7), 0 0 20px rgba(255,149,26,0.5)' },
-              'to': { textShadow: '0 0 25px rgba(255,149,26,0.9), 0 0 45px rgba(255,149,26,0.7)' }
-            }
-          }
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
         }
       }
     };
   </script>
 
-  <!-- Custom Styles -->
   <style>
-    body, header, section, footer, div, p, h1, h2, h3, a, button, img {
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    }
-    /* Anime Scroll Line */
-    .scroll-line {
-      position: relative;
-      height: 100%;
-    }
-    .scroll-line::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent, #FF951A, transparent);
-      transform: translateX(-50%);
-    }
-    .scroll-orb {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: #FF951A;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0 15px rgba(255, 149, 26, 0.6);
-      animation: float 4s infinite alternate;
-    }
-    .scroll-orb:nth-child(1) { top: 20%; animation-delay: 0s; }
-    .scroll-orb:nth-child(2) { top: 45%; animation-delay: 1s; }
-    .scroll-orb:nth-child(3) { top: 70%; animation-delay: 2s; }
+    body { font-family: Poppins, sans-serif; }
+    body, header, section, footer, div, p, h1, h2, h3, a, button, img { transition: all .25s ease; }
 
-    /* Modal */
-    .modal {
-      display: none; /* Initially hidden */
-    }
-    .modal.show {
-      display: flex; /* Shown with JS */
-    }
-    
-    /* Filter Buttons */
-    .filter-btn:hover {
-      background-color: #FF951A;
-      color: white;
-      transform: translateY(-2px);
-    }
-    .active-filter {
-      background-color: #FF951A !important;
-      color: white !important;
-      box-shadow: 0 5px 15px rgba(255, 149, 26, 0.3);
-    }
+    /* Fast hover only (no heavy animations) */
+    .filter-btn:hover { background-color: #FF951A; color: white; }
+    .active-filter { background-color: #FF951A !important; color: white !important; box-shadow: 0 5px 15px rgba(255,149,26,0.25); }
+    .post-card:hover { border-color: #FF951A; }
 
-    /* Post Card */
-    .post-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      border-color: #FF951A;
-    }
-    .post-card img {
-      transition: transform 0.4s ease;
-    }
-    .post-card:hover img {
-      transform: scale(1.05);
-    }
-    /* Saiyan Mode Toggle */
-    #theme-toggle.saiyan {
-      animation: glow 1.5s infinite alternate;
-    }
+    .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
   </style>
-</head>
-<body class="font-poppins bg-light-bg-secondary text-light-text-primary dark:bg-dark-bg-secondary dark:text-dark-text-primary">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-light-border dark:border-dark-border">
+  <!-- JSON-LD for blog page -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"AniTrain News",
+    "url":"https://anitrain.app/blog.html",
+    "description":"Latest AniTrain news, updates, and anime fitness content.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"AniTrain",
+      "logo":{"@type":"ImageObject","url":"https://anitrain.app/anitrain-logo.png"}
+    }
+  }
+  </script>
+</head>
+
+<body id="top" class="bg-light-bg-secondary text-light-text-primary dark:bg-dark-bg-secondary dark:text-dark-text-primary">
+
+  <!-- ✅ Header (index.html style) -->
+  <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="./index.html" class="flex-shrink-0">
-          <img src="./anitrain-logo.png" alt="AniTrain logo" class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-md border-2 border-anitrain-orange" onerror="this.onerror=null;this.src='https://placehold.co/56x56/101010/FF951A?text=AT';">
+        <a href="./index.html#home" class="flex-shrink-0">
+          <img src="./anitrain-logo.png" alt="AniTrain logo"
+               class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-lg border-2 border-anitrain-orange"
+               onerror="this.onerror=null;this.src='https://placehold.co/56x56/101010/FF951A?text=AT';">
         </a>
+
+        <!-- ✅ Desktop Nav (REMOVED Features/Characters/Testimonials) -->
         <nav class="hidden lg:flex lg:items-center lg:space-x-8">
-          <a href="./index.html#features" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Features</a>
-          <a href="./index.html#characters" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Characters</a>
-          <a href="./index.html#reviews" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">Testimonials</a>
-          <a href="./blog.html" class="text-sm font-bold text-anitrain-orange transition-colors">News</a>
-          <a href="./about-us.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange transition-colors">About Us</a>
+          <a href="./blog.html"
+             class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">
+            News
+          </a>
+          <a href="./about-us.html"
+             class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">
+            About Us
+          </a>
         </nav>
+
         <div class="flex items-center space-x-3 sm:space-x-4">
-          <button id="support-btn" class="px-6 py-3 bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
+          <a href="./index.html#support"
+             class="px-6 py-3 bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
             💖 Support Us
-          </button>
-          <button id="theme-toggle" type="button" class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 focus:outline-none transition-colors">
+          </a>
+
+          <button id="theme-toggle" type="button"
+            class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 focus:outline-none transition-colors">
             <ion-icon name="sunny-outline" class="text-xl inline dark:hidden text-yellow-400"></ion-icon>
             <ion-icon name="moon-outline" class="text-xl hidden dark:inline text-white"></ion-icon>
           </button>
+
           <div class="lg:hidden">
-            <button id="nav-open-btn" type="button" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20">
+            <button id="nav-open-btn" type="button"
+              class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20">
               <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
             </button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Mobile menu -->
     <div class="lg:hidden hidden bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border" id="mobile-menu">
       <div class="px-4 pt-3 pb-4 space-y-3">
-        <a href="./index.html#features" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Features</a>
-        <a href="./index.html#characters" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Characters</a>
-        <a href="./index.html#reviews" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Testimonials</a>
-        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-anitrain-orange bg-anitrain-orange/10">News</a>
-        <a href="./about-us.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">About Us</a>
+        <a href="./blog.html"
+           class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">
+          News
+        </a>
+        <a href="./about-us.html"
+           class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">
+          About Us
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="py-16 lg:py-24">
+  <main class="py-12 lg:py-14">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8 lg:mb-12">
-        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 text-light-text-primary dark:text-dark-text-primary animate-glow">
+
+      <div class="text-center mb-10">
+        <h1 class="text-4xl lg:text-5xl font-extrabold mb-3">
           <span class="text-anitrain-orange">Dojo</span> News
         </h1>
-        <p class="mt-4 max-w-2xl mx-auto text-light-text-secondary dark:text-dark-text-secondary" data-aos="fade-up">
-          The latest articles, announcements, and stories from the AniTrain world.
+        <p class="max-w-2xl mx-auto text-light-text-secondary dark:text-dark-text-secondary">
+          Latest articles, announcements, and stories from the AniTrain world.
         </p>
       </div>
 
-      <!-- Category Filters -->
-      <div id="category-filters" class="flex flex-wrap justify-center gap-3 mb-10 lg:mb-14" data-aos="fade-up">
-        <!-- Dynamically populated -->
+      <!-- Search + Sort -->
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
+        <div class="md:col-span-2">
+          <div class="relative">
+            <ion-icon name="search-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-light-text-secondary dark:text-dark-text-secondary"></ion-icon>
+            <input id="searchInput" type="text" placeholder="Search posts (title, category, author)..."
+              class="w-full pl-12 pr-4 py-3 rounded-2xl border border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface focus:outline-none focus:ring-4 focus:ring-anitrain-orange/20">
+          </div>
+        </div>
+
+        <div>
+          <select id="sortSelect"
+            class="w-full px-4 py-3 rounded-2xl border border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface focus:outline-none focus:ring-4 focus:ring-anitrain-orange/20">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Sort: Oldest</option>
+            <option value="popular">Sort: Most Viewed (local)</option>
+          </select>
+        </div>
       </div>
 
-      <!-- Posts Grid -->
-      <div class="scroll-line relative">
-        <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10" data-aos="fade-up">
-          <!-- Dynamically populated -->
-        </div>
-        <!-- Anime Orbs -->
-        <div class="scroll-orb"></div>
-        <div class="scroll-orb"></div>
-        <div class="scroll-orb"></div>
+      <!-- Categories -->
+      <div id="category-filters" class="flex flex-wrap justify-center gap-3 mb-10"></div>
+
+      <!-- Posts -->
+      <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <p id="noResults" class="hidden text-center mt-10 text-light-text-secondary dark:text-dark-text-secondary">
+        No posts found.
+      </p>
+
+      <div class="flex justify-center mt-10">
+        <button id="loadMoreBtn"
+          class="hidden px-8 py-3 rounded-full font-semibold bg-anitrain-orange text-white hover:scale-105 shadow-lg transition-all">
+          Load more
+        </button>
       </div>
+
     </div>
   </main>
 
-  <!-- Modal -->
-  <div id="postModal" class="modal fixed top-0 left-0 right-0 bottom-0 bg-black/80 backdrop-blur-sm z-[1000] justify-center items-center p-4">
-    <div class="modal-content bg-light-surface dark:bg-dark-surface text-light-text-primary dark:text-dark-text-primary p-6 md:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-2xl relative shadow-2xl border border-light-border dark:border-dark-border">
-      <button class="close-btn absolute top-4 right-4 text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange dark:hover:text-anitrain-orange text-4xl leading-none">&times;</button>
-      <img id="modalImage" src="" alt="Post Image" class="w-full h-auto max-h-80 object-cover rounded-lg mb-6">
-      <h2 id="modalTitle" class="text-3xl font-bold mb-4"></h2>
-      <div id="modalBody" class="prose dark:prose-invert max-w-none text-light-text-secondary dark:text-dark-text-secondary"></div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-light-bg dark:bg-dark-bg pt-16 pb-8">
+  <footer class="bg-light-bg dark:bg-dark-bg pt-12 pb-8">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="border-t border-light-border dark:border-dark-border pt-8 text-center space-y-2">
         <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
@@ -232,156 +216,319 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <a href="#top" id="go-top"
+     class="fixed bottom-6 right-6 z-50 p-4 bg-anitrain-orange text-white rounded-full shadow-lg hover:bg-anitrain-orange-dark transition-all opacity-0 pointer-events-none duration-300">
+    <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+  </a>
+
   <script>
-    AOS.init({
-      once: true,
-      mirror: false,
-      duration: 700,
-      easing: 'ease-out-cubic',
-    });
+    // ============================
+    // ✅ CONFIG (Sanity)
+    // ============================
+    const SANITY_PROJECT_ID = "7vt4jf3d";
+    const SANITY_DATASET = "production";
+    const SANITY_API_VERSION = "2023-03-25";
 
+    // State
     let allPosts = [];
+    let allCategories = [];
+    let activeCategory = "All";
+    let searchTerm = "";
+    let sortMode = "newest";
+    const PAGE_SIZE = 9;
+    let visibleCount = PAGE_SIZE;
 
-    // Fetch posts from Sanity
-    async function fetchPosts() {
-      try {
-        const query = encodeURIComponent(`*[_type == "post"] | order(publishedAt desc){
-          _id, title, slug, body, mainImage{asset->{url}}, publishedAt, categories[]->{title}
-        }`);
-        const url = `https://7vt4jf3d.api.sanity.io/v2023-03-25/data/query/production?query=${query}`;
-        const res = await fetch(url);
-        const data = await res.json();
-        if (data.result) {
-          allPosts = data.result;
-          setupCategoryFilters();
-          filterPosts('All');
+    const $ = (id) => document.getElementById(id);
+
+    function safeText(text) {
+      return (text || "").toString().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      try { return new Date(dateStr).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' }); }
+      catch { return ""; }
+    }
+
+    function getExcerptFromBody(body, maxChars = 150) {
+      if (!Array.isArray(body)) return "";
+      const texts = [];
+      for (const block of body) {
+        if (block?._type === "block" && Array.isArray(block.children)) {
+          const t = block.children.map(c => c.text || "").join("");
+          if (t) texts.push(t);
         }
-      } catch (err) {
-        console.error("Sanity fetch error:", err);
-        document.getElementById("posts").innerHTML = `<p class="text-center col-span-full text-light-text-secondary dark:text-dark-text-secondary">Failed to load posts. Please try again later.</p>`;
+        if (texts.join(" ").length > maxChars) break;
       }
+      const joined = texts.join(" ").trim().replace(/\s+/g, " ");
+      return joined.length > maxChars ? joined.slice(0, maxChars).trim() + "…" : joined;
     }
 
-    // Setup category filters
+    function estimateReadTime(body) {
+      const text = getExcerptFromBody(body, 5000);
+      const words = text.split(/\s+/).filter(Boolean).length;
+      const minutes = Math.max(1, Math.round(words / 200));
+      return `${minutes} min read`;
+    }
+
+    function getLocalViews(slug) {
+      try {
+        const raw = localStorage.getItem("anitrain_post_views") || "{}";
+        const obj = JSON.parse(raw);
+        return Number(obj[slug] || 0);
+      } catch { return 0; }
+    }
+
+    async function shareLink(title, url) {
+      try {
+        if (navigator.share) await navigator.share({ title, url });
+        else { await navigator.clipboard.writeText(url); alert("Link copied!"); }
+      } catch {}
+    }
+
+    // Fast: fetch posts + categories in parallel
+    async function fetchPosts() {
+      const query = encodeURIComponent(`*[_type == "post"] | order(publishedAt desc){
+        title, slug, body, mainImage{asset->{url}}, publishedAt,
+        categories[]->{title},
+        author->{name, image{asset->{url}}}
+      }`);
+      const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${query}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      allPosts = Array.isArray(data.result) ? data.result : [];
+    }
+
+    async function fetchCategories() {
+      const query = encodeURIComponent(`*[_type == "category"] | order(title asc){ title }`);
+      const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${query}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      allCategories = Array.isArray(data.result) ? data.result.map(x => x.title).filter(Boolean) : [];
+    }
+
     function setupCategoryFilters() {
-      const categories = ["All", "Anime News", "Anime Reviews", "Upcoming Anime", "Training Tips", "Community Spotlight"];
-      const container = document.getElementById("category-filters");
-      if (!container) return;
+      const container = $("category-filters");
       container.innerHTML = "";
-      categories.forEach(category => {
-        const button = document.createElement("button");
-        button.textContent = category;
-        button.className = "filter-btn px-4 py-2 font-semibold border rounded-full transition-all duration-300 bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-text-secondary dark:text-dark-text-secondary";
-        button.onclick = () => filterPosts(category);
-        container.appendChild(button);
+
+      const categories = ["All", ...allCategories];
+      const frag = document.createDocumentFragment();
+
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = cat;
+        btn.className = "filter-btn px-4 py-2 font-semibold border rounded-full transition-all bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-text-secondary dark:text-dark-text-secondary";
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          visibleCount = PAGE_SIZE;
+          applyFiltersAndRender();
+        });
+        frag.appendChild(btn);
+      });
+
+      container.appendChild(frag);
+      setActiveFilterButton();
+    }
+
+    function setActiveFilterButton() {
+      document.querySelectorAll('#category-filters button').forEach(btn => {
+        btn.classList.toggle("active-filter", btn.textContent === activeCategory);
       });
     }
 
-    // Filter posts
-    function filterPosts(category) {
-      document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
-        btn.classList.remove('active-filter');
-        if (btn.textContent === category) {
-          btn.classList.add('active-filter');
-        }
-      });
+    function applyFilters(posts) {
+      let filtered = [...posts];
 
-      const filteredPosts = category === 'All'
-        ? allPosts
-        : allPosts.filter(post => post.categories && post.categories.some(c => c.title === category));
+      if (activeCategory !== "All") {
+        filtered = filtered.filter(p => (p.categories || []).some(c => c?.title === activeCategory));
+      }
 
-      renderPosts(filteredPosts);
+      if (searchTerm.trim()) {
+        const s = searchTerm.trim().toLowerCase();
+        filtered = filtered.filter(p => {
+          const title = (p.title || "").toLowerCase();
+          const author = (p.author?.name || "").toLowerCase();
+          const cats = (p.categories || []).map(c => (c?.title || "").toLowerCase()).join(" ");
+          return title.includes(s) || author.includes(s) || cats.includes(s);
+        });
+      }
+
+      if (sortMode === "oldest") {
+        filtered.sort((a,b) => new Date(a.publishedAt) - new Date(b.publishedAt));
+      } else if (sortMode === "popular") {
+        filtered.sort((a,b) => getLocalViews(b.slug?.current || "") - getLocalViews(a.slug?.current || ""));
+      } else {
+        filtered.sort((a,b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+      }
+
+      return filtered;
     }
 
-    // Render posts
     function renderPosts(posts) {
-      const container = document.getElementById("posts");
-      if (!container) return;
+      const container = $("posts");
+      const noResults = $("noResults");
+      const loadMoreBtn = $("loadMoreBtn");
+
       container.innerHTML = "";
-      if (posts.length === 0) {
-        container.innerHTML = `<p class="text-center col-span-full text-light-text-secondary dark:text-dark-text-secondary">No posts found in this category.</p>`;
+
+      if (!posts.length) {
+        noResults.classList.remove("hidden");
+        loadMoreBtn.classList.add("hidden");
         return;
       }
-      posts.forEach(post => {
+      noResults.classList.add("hidden");
+
+      const visible = posts.slice(0, visibleCount);
+      const frag = document.createDocumentFragment();
+
+      visible.forEach(post => {
+        const slug = post.slug?.current || "";
+        const date = formatDate(post.publishedAt);
+        const authorName = post.author?.name || "AniTrain";
+        const authorAvatar = post.author?.image?.asset?.url || "https://placehold.co/80x80/101010/FF951A?text=AU";
+        const imageUrl = post.mainImage?.asset?.url || "https://placehold.co/600x400/171717/FFF?text=AniTrain";
+        const excerpt = getExcerptFromBody(post.body);
+        const readTime = estimateReadTime(post.body);
+        const views = getLocalViews(slug);
+
         const card = document.createElement("div");
-        card.className = "post-card bg-white dark:bg-dark-surface rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 cursor-pointer border border-light-border dark:border-dark-border";
+        card.className = "post-card bg-white dark:bg-dark-surface rounded-2xl shadow-lg overflow-hidden border border-light-border dark:border-dark-border";
+
         card.innerHTML = `
-          <div class="overflow-hidden"><img src="${post.mainImage?.asset?.url || 'https://placehold.co/600x400/171717/FFF?text=AniTrain'}" alt="${post.title}" class="w-full h-48 object-cover"></div>
-          <div class="p-6">
-            <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">${new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-            <h3 class="text-xl font-bold mb-4 text-light-text-primary dark:text-dark-text-primary">${post.title}</h3>
-            <div class="flex flex-wrap gap-2">
-              ${(post.categories || []).map(cat => `<span class="text-xs font-semibold px-2 py-1 bg-anitrain-orange/10 text-anitrain-orange rounded-full">${cat.title}</span>`).join('')}
+          <a href="./post.html?slug=${encodeURIComponent(slug)}" class="block">
+            <div class="overflow-hidden">
+              <img src="${imageUrl}" alt="${safeText(post.title)}" class="w-full h-48 object-cover" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/FFF?text=AniTrain';">
             </div>
-          </div>
+
+            <div class="p-6">
+              <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">${date || ""}</p>
+
+              <h3 class="text-xl font-bold mb-2 text-light-text-primary dark:text-dark-text-primary clamp-2">
+                ${safeText(post.title)}
+              </h3>
+
+              <div class="flex items-center gap-2 mb-3">
+                <img src="${authorAvatar}" alt="${safeText(authorName)}"
+                     class="w-7 h-7 rounded-full object-cover border border-light-border dark:border-dark-border"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='https://placehold.co/80x80/101010/FF951A?text=AU';">
+                <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                  by <span class="font-semibold text-light-text-primary dark:text-dark-text-primary">${safeText(authorName)}</span>
+                  <span class="mx-2">•</span> ${readTime}
+                  <span class="mx-2">•</span> ${views} views
+                </p>
+              </div>
+
+              <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-4 clamp-3">
+                ${safeText(excerpt)}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                ${(post.categories || []).map(cat =>
+                  `<span class="text-xs font-semibold px-2 py-1 bg-anitrain-orange/10 text-anitrain-orange rounded-full">${safeText(cat.title)}</span>`
+                ).join('')}
+              </div>
+
+              <div class="flex items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-anitrain-orange">
+                  Read →
+                </span>
+
+                <button class="share-btn text-sm px-3 py-1.5 rounded-full border border-light-border dark:border-dark-border hover:bg-anitrain-orange/10"
+                        data-title="${safeText(post.title)}"
+                        data-url="https://anitrain.app/post.html?slug=${encodeURIComponent(slug)}"
+                        type="button">
+                  Share
+                </button>
+              </div>
+            </div>
+          </a>
         `;
-        card.onclick = () => openModal(post);
-        container.appendChild(card);
+
+        frag.appendChild(card);
+      });
+
+      container.appendChild(frag);
+
+      if (posts.length > visibleCount) loadMoreBtn.classList.remove("hidden");
+      else loadMoreBtn.classList.add("hidden");
+
+      document.querySelectorAll(".share-btn").forEach(btn => {
+        btn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const title = btn.getAttribute("data-title") || "AniTrain";
+          const url = btn.getAttribute("data-url") || location.href;
+          await shareLink(title, url);
+        });
       });
     }
 
-    // Modal
-    const modal = document.getElementById("postModal");
-    const modalCloseBtn = document.querySelector("#postModal .close-btn");
+    function applyFiltersAndRender() {
+      setActiveFilterButton();
+      const filtered = applyFilters(allPosts);
+      renderPosts(filtered);
+    }
 
-    function openModal(post) {
-      if (!modal) return;
-      document.getElementById("modalTitle").innerText = post.title;
-      document.getElementById("modalImage").src = post.mainImage?.asset?.url || '';
-      document.getElementById("modalBody").innerHTML = (post.body || []).map(block => {
-        if (block._type === 'block' && block.children) {
-          return `<p class="mb-4">${block.children.map(child => child.text).join('')}</p>`;
-        }
-        return '';
-      }).join('');
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      if (!modal) return;
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-    modalCloseBtn?.addEventListener('click', closeModal);
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
+    // Header UI
+    function initHeaderUi() {
+      // Theme
+      const themeToggle = $("theme-toggle");
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
       }
-    });
-
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      themeToggle?.classList.add('saiyan');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    themeToggle?.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      isDark ? themeToggle.classList.add('saiyan') : themeToggle.classList.remove('saiyan');
-    });
-
-    // Mobile Menu
-    const navOpenBtn = document.getElementById('nav-open-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (navOpenBtn && mobileMenu) {
-      navOpenBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        const icon = navOpenBtn.querySelector('ion-icon');
-        icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
+      themeToggle?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
       });
+
+      // Mobile menu
+      const navOpenBtn = $("nav-open-btn");
+      const mobileMenu = $("mobile-menu");
+      navOpenBtn?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const icon = navOpenBtn.querySelector("ion-icon");
+        if (icon) icon.name = mobileMenu.classList.contains("hidden") ? "menu-outline" : "close-outline";
+      });
+
+      // Go top
+      const goTop = $("go-top");
+      window.addEventListener('scroll', () => {
+        const show = window.scrollY >= 400;
+        goTop.classList.toggle('opacity-0', !show);
+        goTop.classList.toggle('pointer-events-none', !show);
+      });
+
+      $("currentYear").textContent = new Date().getFullYear();
     }
 
-    // Year
-    const currentYearEl = document.getElementById('currentYear');
-    if(currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+    // Search + Sort + Load more
+    $("searchInput").addEventListener("input", (e) => {
+      searchTerm = e.target.value || "";
+      visibleCount = PAGE_SIZE;
+      applyFiltersAndRender();
+    });
 
-    // Initial Fetch
-    fetchPosts();
+    $("sortSelect").addEventListener("change", (e) => {
+      sortMode = e.target.value || "newest";
+      visibleCount = PAGE_SIZE;
+      applyFiltersAndRender();
+    });
+
+    $("loadMoreBtn").addEventListener("click", () => {
+      visibleCount += PAGE_SIZE;
+      applyFiltersAndRender();
+    });
+
+    // Init
+    (async function init() {
+      initHeaderUi();
+      await Promise.all([fetchCategories(), fetchPosts()]);
+      setupCategoryFilters();
+      applyFiltersAndRender();
+    })();
   </script>
 </body>
 </html>
