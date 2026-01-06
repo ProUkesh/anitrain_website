@@ -1,8 +1,11 @@
+<!-- /public/sitemap.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://anitrain.app/</loc>
-    <lastmod>2025-07-25</lastmod>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://anitrain.app/sitemap-pages.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://anitrain.app/sitemap-posts.xml</loc>
+  </sitemap>
+</sitemapindex>
