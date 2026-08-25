@@ -288,6 +288,95 @@
     </div>
   </div>
 
+  <!-- ================= DOWNLOAD POPUP ================= -->
+  <div id="download-modal" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/80 backdrop-blur-xl px-4" aria-hidden="true" role="dialog" aria-label="Download AniTrain">
+
+    <div class="relative w-full max-w-xl rounded-3xl bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border p-8 shadow-2xl">
+      <button id="download-modal-close" class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 text-2xl" aria-label="Close download modal">&times;</button>
+
+      <div class="flex gap-4">
+        <div class="h-14 w-14 rounded-2xl overflow-hidden border-2 border-anitrain-orange bg-black flex items-center justify-center">
+  <img
+    src="./anitrain-logo.png"
+    alt="AniTrain Logo"
+    class="h-full w-full object-cover"
+  />
+</div>
+
+
+        <div>
+          <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold rounded-full bg-anitrain-orange/20 text-anitrain-orange">
+            New on Google Play
+          </span>
+
+          <h3 class="text-2xl font-extrabold">
+            Download <span class="text-anitrain-orange">AniTrain</span>
+          </h3>
+
+          <p class="mt-2 text-light-text-secondary dark:text-dark-text-secondary">
+            XP • Levels • Streaks • Anime-inspired workouts
+          </p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.anitrain"
+               target="_blank"
+               class="px-6 py-3 rounded-full bg-anitrain-orange text-black font-bold text-center hover:bg-anitrain-orange-dark transition">
+              Download Now
+            </a>
+
+            <button id="download-modal-later"
+                    class="px-6 py-3 rounded-full border border-light-border dark:border-dark-border hover:bg-black/5 dark:hover:bg-white/5 transition">
+              Maybe later
+            </button>
+          </div>
+
+          <p class="mt-4 text-xs text-light-text-secondary dark:text-dark-text-secondary">
+            This popup appears only once.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const MODAL_KEY = 'anitrain_download_dismissed';
+      const modal = document.getElementById('download-modal');
+      const closeBtn = document.getElementById('download-modal-close');
+      const laterBtn = document.getElementById('download-modal-later');
+
+      function openModal(){
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(){
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        try { localStorage.setItem(MODAL_KEY, '1'); } catch (e) { /* ignore */ }
+      }
+
+      closeBtn?.addEventListener('click', closeModal);
+      laterBtn?.addEventListener('click', closeModal);
+      modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        try {
+          if (!localStorage.getItem(MODAL_KEY)) setTimeout(openModal, 900);
+        } catch (e) {
+          // If localStorage is unavailable, still show the modal once per session
+          setTimeout(openModal, 900);
+        }
+      });
+    })();
+  </script>
+
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -321,6 +410,25 @@
             <ion-icon name="moon-outline" class="text-xl hidden dark:inline text-white"></ion-icon>
           </button>
 
+          <!-- Socials -->
+          <div class="hidden sm:flex items-center gap-2">
+            <a href="https://www.facebook.com/anitrainapp/" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+               aria-label="AniTrain on Facebook">
+              <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/anitrain.app/" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+               aria-label="AniTrain on Instagram">
+              <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/watch?v=GFkX6yAvjrA" target="_blank" rel="noopener noreferrer"
+               class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+               aria-label="AniTrain on YouTube">
+              <ion-icon name="logo-youtube" class="text-xl"></ion-icon>
+            </a>
+          </div>
+
           <div class="lg:hidden">
             <button id="nav-open-btn" type="button" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20 t-smooth" aria-label="Open menu">
               <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
@@ -331,12 +439,34 @@
     </div>
 
     <div class="lg:hidden hidden bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border" id="mobile-menu">
-      <div class="px-4 pt-3 pb-4 space-y-3">
+      <div class="px-4 pt-3 pb-2 space-y-3">
         <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">News</a>
         <a href="./about-us.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">About Us</a>
         <a href="#features" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">Features</a>
         <a href="#faq" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">FAQ</a>
       </div>
+
+      <div class="mt-3 px-4 pb-4 flex items-center gap-3">
+        <a href="https://www.facebook.com/anitrainapp/" target="_blank" rel="noopener noreferrer"
+           class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+           aria-label="AniTrain on Facebook">
+          <ion-icon name="logo-facebook" class="text-lg"></ion-icon>
+          <span class="text-sm font-semibold">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/anitrain.app/" target="_blank" rel="noopener noreferrer"
+           class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+           aria-label="AniTrain on Instagram">
+          <ion-icon name="logo-instagram" class="text-lg"></ion-icon>
+          <span class="text-sm font-semibold">Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=GFkX6yAvjrA" target="_blank" rel="noopener noreferrer"
+           class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth"
+           aria-label="AniTrain on YouTube">
+          <ion-icon name="logo-youtube" class="text-lg"></ion-icon>
+          <span class="text-sm font-semibold">YouTube</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
@@ -375,15 +505,33 @@
         <p class="text-xl md:text-2xl text-light-text-secondary dark:text-dark-text-secondary mb-10 max-w-3xl mx-auto leading-relaxed">
           Train Like a <span class="font-bold text-anitrain-orange">Hero</span>. Sweat Like a <span class="font-bold text-anitrain-orange">Saiyan</span>. Transform Like a <span class="font-bold underline">Legend</span>.
         </p>
-
         <!-- CTA -->
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-          <!-- Replace href with your real store links when ready -->
-          <a href="#" class="transform hover:scale-105 transition-transform" aria-label="Download on the App Store">
-            <img src="https://placehold.co/180x53/000000/FFFFFF?text=App+Store&font=Poppins" alt="App Store badge" class="h-14 w-auto rounded-xl shadow-lg" width="180" height="53" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="transform hover:scale-105 transition-transform" aria-label="Get it on Google Play">
+          <a href="https://play.google.com/store/apps/details?id=com.anitrain" class="transform hover:scale-105 transition-transform" aria-label="Get it on Google Play">
             <img src="https://placehold.co/180x53/000000/FFFFFF?text=Google+Play&font=Poppins" alt="Google Play badge" class="h-14 w-auto rounded-xl shadow-lg" width="180" height="53" loading="lazy" decoding="async">
+          </a>
+        </div>
+
+
+        <!-- Social proof quick links -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <a href="https://www.facebook.com/anitrainapp/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 dark:bg-white/10 border border-light-border dark:border-dark-border hover:bg-anitrain-orange/15 hover:text-anitrain-orange t-smooth"
+             aria-label="Follow AniTrain on Facebook">
+            <ion-icon name="logo-facebook" class="text-lg"></ion-icon>
+            <span class="text-sm font-semibold">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/anitrain.app/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 dark:bg-white/10 border border-light-border dark:border-dark-border hover:bg-anitrain-orange/15 hover:text-anitrain-orange t-smooth"
+             aria-label="Follow AniTrain on Instagram">
+            <ion-icon name="logo-instagram" class="text-lg"></ion-icon>
+            <span class="text-sm font-semibold">Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/watch?v=GFkX6yAvjrA" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 dark:bg-white/10 border border-light-border dark:border-dark-border hover:bg-anitrain-orange/15 hover:text-anitrain-orange t-smooth"
+             aria-label="Watch AniTrain on YouTube">
+            <ion-icon name="logo-youtube" class="text-lg"></ion-icon>
+            <span class="text-sm font-semibold">YouTube</span>
           </a>
         </div>
 
@@ -662,7 +810,7 @@
   <!-- Footer -->
   <footer class="bg-light-bg-secondary dark:bg-dark-bg-secondary pt-20 pb-10">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-8 md:grid-cols-3 mb-10">
+      <div class="grid gap-8 md:grid-cols-4 mb-10">
         <div>
           <p class="text-xl font-extrabold text-light-text-primary dark:text-dark-text-primary">
             <span class="text-anitrain-orange">Ani</span>Train
@@ -680,6 +828,31 @@
             <li><a class="text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange t-smooth" href="#features">Features</a></li>
             <li><a class="text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange t-smooth" href="#faq">FAQ</a></li>
           </ul>
+        </div>
+
+
+        <div>
+          <p class="font-bold text-light-text-primary dark:text-dark-text-primary mb-3">Follow</p>
+          <div class="flex items-center gap-3">
+            <a href="https://www.facebook.com/anitrainapp/" target="_blank" rel="noopener noreferrer"
+               class="p-3 rounded-2xl bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border shadow-soft hover:shadow-hard hover:-translate-y-1 t-smooth"
+               aria-label="AniTrain on Facebook">
+              <ion-icon name="logo-facebook" class="text-2xl"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/anitrain.app/" target="_blank" rel="noopener noreferrer"
+               class="p-3 rounded-2xl bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border shadow-soft hover:shadow-hard hover:-translate-y-1 t-smooth"
+               aria-label="AniTrain on Instagram">
+              <ion-icon name="logo-instagram" class="text-2xl"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/watch?v=GFkX6yAvjrA" target="_blank" rel="noopener noreferrer"
+               class="p-3 rounded-2xl bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border shadow-soft hover:shadow-hard hover:-translate-y-1 t-smooth"
+               aria-label="AniTrain on YouTube">
+              <ion-icon name="logo-youtube" class="text-2xl"></ion-icon>
+            </a>
+          </div>
+          <p class="mt-3 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            New clips, updates, and feature drops.
+          </p>
         </div>
 
         <div>

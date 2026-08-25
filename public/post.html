@@ -6,14 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ Base SEO (will be upgraded dynamically after post loads) -->
+  <!-- Base SEO (upgraded dynamically after post loads) -->
   <title>AniTrain News – Post</title>
   <meta name="description" content="Read the latest AniTrain news, updates, anime fitness tips, and app announcements." />
   <meta name="author" content="programmerukesh.com" />
+
+  <!-- Canonical is upgraded dynamically to the exact slug URL -->
   <link rel="canonical" href="https://anitrain.app/post.html" />
 
-  <!-- ✅ Start conservative: prevent indexing until slug/post is valid -->
-  <meta name="robots" content="noindex, nofollow" />
+  <!-- ✅ Important: Default to index (Google may not always run JS) -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <!-- Open Graph / Twitter (updated dynamically too) -->
   <meta property="og:type" content="article" />
@@ -41,7 +43,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ✅ Defer icons -->
+  <!-- Defer icons -->
   <script type="module" defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -83,10 +85,7 @@
 
   <style>
     body { font-family: Poppins, sans-serif; }
-
-    /* ✅ Avoid transition: all on everything (bad for performance) */
     .t-smooth { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease; }
-
     .dark .gradient-bg {
       background: linear-gradient(135deg,
         hsl(240, 15%, 5%) 0%,
@@ -94,7 +93,6 @@
         hsl(240, 10%, 12%) 100%);
     }
 
-    /* Portable text styling */
     .post-prose { line-height: 1.95; }
     .post-prose p { margin: 14px 0; }
     .post-prose h2 { margin-top: 26px; margin-bottom: 12px; font-weight: 800; font-size: 1.5rem; color: inherit; }
@@ -109,7 +107,6 @@
     }
     .post-prose a { text-decoration: underline; }
     .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-    .clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
 
     @media (prefers-reduced-motion: reduce) {
       .t-smooth { transition: none !important; }
@@ -117,7 +114,7 @@
     }
   </style>
 
-  <!-- ✅ JSON-LD placeholder (updated dynamically) -->
+  <!-- JSON-LD placeholder (updated dynamically) -->
   <script type="application/ld+json" id="jsonld">
   {
     "@context":"https://schema.org",
@@ -131,7 +128,7 @@
   }
   </script>
 
-  <!-- ✅ Breadcrumb JSON-LD placeholder (updated dynamically) -->
+  <!-- Breadcrumb JSON-LD placeholder (updated dynamically) -->
   <script type="application/ld+json" id="breadcrumbs-jsonld">
   {
     "@context":"https://schema.org",
@@ -271,7 +268,6 @@
             <div id="sidebarRecs" class="space-y-4"></div>
           </div>
 
-          <!-- ✅ Trust links = SEO benefit -->
           <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
             <h3 class="text-lg font-extrabold mb-3 text-light-text-primary dark:text-dark-text-primary">Legal</h3>
             <div class="flex flex-col gap-2 text-sm">
@@ -280,6 +276,7 @@
             </div>
           </div>
         </aside>
+
       </div>
     </div>
   </main>
@@ -305,7 +302,7 @@
 
   <script>
     // ============================
-    // ✅ CONFIG (Sanity)
+    // CONFIG (Sanity)
     // ============================
     const SANITY_PROJECT_ID = "7vt4jf3d";
     const SANITY_DATASET = "production";
@@ -344,14 +341,6 @@
 
     function wordCountFromBlocks(body) {
       return extractPlainText(body).split(/\s+/).filter(Boolean).length;
-    }
-
-    function getLocalViews(slug) {
-      try {
-        const raw = localStorage.getItem("anitrain_post_views") || "{}";
-        const obj = JSON.parse(raw);
-        return Number(obj[slug] || 0);
-      } catch { return 0; }
     }
 
     function incrementViews(slug) {
@@ -450,21 +439,13 @@
     // SEO helpers
     function setMeta(name, content) {
       let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
+      if (!el) { el = document.createElement("meta"); el.setAttribute("name", name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     }
 
     function setProperty(prop, content) {
       let el = document.querySelector(`meta[property="${prop}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("property", prop);
-        document.head.appendChild(el);
-      }
+      if (!el) { el = document.createElement("meta"); el.setAttribute("property", prop); document.head.appendChild(el); }
       el.setAttribute("content", content);
     }
 
@@ -545,8 +526,8 @@
     function renderCategoriesSidebar(categories) {
       const wrap = $("sidebarCategories");
       wrap.innerHTML = "";
-
       const all = ["All", ...(categories || []).map(x => x.title).filter(Boolean)];
+
       all.forEach(cat => {
         const a = document.createElement("a");
         a.href = `./blog.html`;
@@ -556,7 +537,6 @@
       });
     }
 
-    // Theme + UI
     function initTheme() {
       const themeToggle = $("theme-toggle");
 
@@ -596,10 +576,13 @@
 
       const slug = getSlug();
       const errorBox = $("errorBox");
+
       if (!slug) {
+        $("title").textContent = "Post not found";
         errorBox.textContent = "Missing post slug.";
         errorBox.classList.remove("hidden");
-        // Keep noindex
+
+        // ✅ Only noindex when invalid page
         setRobots("noindex, nofollow");
         return;
       }
@@ -610,14 +593,16 @@
       ]);
 
       if (!post) {
+        $("title").textContent = "Post not found";
         errorBox.textContent = "Post not found. Please check the slug.";
         errorBox.classList.remove("hidden");
-        // ✅ Noindex for not found
+
+        // ✅ Only noindex when invalid page
         setRobots("noindex, nofollow");
         return;
       }
 
-      // ✅ Now that the post is valid: allow indexing
+      // ✅ Valid post => index
       setRobots("index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
 
       // Views
@@ -663,11 +648,10 @@
 
       const posts = Array.isArray(sidebarData.posts) ? sidebarData.posts : [];
       const picked = pickRelatedThenRandom(posts, post.categories || [], 6);
-
       $("sidebarRecs").innerHTML = picked.slice(0, 3).map(recCard).join("");
       $("bottomRecs").innerHTML = picked.slice(3, 6).map(recCard).join("");
 
-      // ✅ Dynamic SEO
+      // Dynamic SEO
       const excerpt = excerptFromBody(post.body, 155) || "Read the latest AniTrain news, anime fitness tips, and app announcements.";
       document.title = `${title} | AniTrain News`;
 
@@ -682,7 +666,7 @@
       updateCanonical(canonical);
       updateBreadcrumbs(title, canonical);
 
-      // ✅ Better JSON-LD
+      // Better JSON-LD
       const wc = wordCountFromBlocks(post.body);
       const keywords = (post.categories || []).map(c => c?.title).filter(Boolean);
 

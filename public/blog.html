@@ -1,4 +1,4 @@
-<!-- /public/post.html -->
+<!-- /public/blog.html -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -6,32 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ Base SEO (upgraded dynamically after post loads) -->
-  <title>AniTrain News – Post</title>
-  <meta name="description" content="Read the latest AniTrain news, updates, anime fitness tips, and app announcements." />
+  <title>AniTrain News | Anime Fitness Updates, Guides & App Announcements</title>
+  <meta name="description" content="AniTrain News: anime fitness guides, workout inspiration, seasonal anime highlights, and official AniTrain app updates." />
+  <meta name="keywords" content="AniTrain, anime fitness, anime workouts, anime gym app, anime training, fitness app, anime news" />
   <meta name="author" content="programmerukesh.com" />
-  <link rel="canonical" href="https://anitrain.app/post.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://anitrain.app/blog.html" />
 
-  <!-- ✅ Start conservative: only index when we confirm post exists -->
-  <meta name="robots" content="noindex,nofollow" />
-
-  <!-- Open Graph / Twitter (updated dynamically too) -->
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="AniTrain News – Post" />
-  <meta property="og:description" content="Latest AniTrain news, updates, and anime fitness content." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AniTrain News | Anime Fitness Updates" />
+  <meta property="og:description" content="Anime fitness guides, workout inspiration, and official AniTrain app updates." />
   <meta property="og:image" content="https://anitrain.app/preview.jpg" />
-  <meta property="og:url" content="https://anitrain.app/post.html" />
+  <meta property="og:url" content="https://anitrain.app/blog.html" />
   <meta property="og:site_name" content="AniTrain" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AniTrain News – Post" />
-  <meta name="twitter:description" content="Latest AniTrain news, updates, and anime fitness content." />
+  <meta name="twitter:title" content="AniTrain News | Anime Fitness Updates" />
+  <meta name="twitter:description" content="Anime fitness guides, workout inspiration, and official AniTrain app updates." />
   <meta name="twitter:image" content="https://anitrain.app/preview.jpg" />
 
   <meta name="theme-color" content="#FF951A" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-  <!-- Performance: preconnect -->
+  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
@@ -41,11 +39,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ✅ Defer icons -->
   <script type="module" defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -69,13 +65,6 @@
             'light-border': 'hsl(240, 10%, 90%)',
           },
           fontFamily: { poppins: ['Poppins', 'sans-serif'] },
-          animation: { 'glow': 'glow 2s ease-in-out infinite alternate' },
-          keyframes: {
-            glow: {
-              from: { textShadow: '0 0 10px rgba(255,149,26,0.7), 0 0 20px rgba(255,149,26,0.5)' },
-              to:   { textShadow: '0 0 25px rgba(255,149,26,0.9), 0 0 45px rgba(255,149,26,0.7)' }
-            }
-          }
         }
       }
     };
@@ -83,69 +72,39 @@
 
   <style>
     body { font-family: Poppins, sans-serif; }
-
-    /* ✅ Replace transition:all (heavy) with a targeted transition */
     .t-smooth { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease; }
-
     .dark .gradient-bg {
       background: linear-gradient(135deg,
         hsl(240, 15%, 5%) 0%,
         hsl(240, 12%, 8%) 50%,
         hsl(240, 10%, 12%) 100%);
     }
-
-    /* Portable text styling */
-    .post-prose { line-height: 1.95; }
-    .post-prose p { margin: 14px 0; }
-    .post-prose h2 { margin-top: 26px; margin-bottom: 12px; font-weight: 800; font-size: 1.5rem; color: inherit; }
-    .post-prose h3 { margin-top: 18px; margin-bottom: 10px; font-weight: 800; font-size: 1.25rem; color: inherit; }
-    .post-prose ul { list-style: disc; margin: 10px 0; padding-left: 22px; }
-    .post-prose ol { list-style: decimal; margin: 10px 0; padding-left: 22px; }
-    .post-prose blockquote {
-      border-left: 4px solid #FF951A;
-      padding-left: 14px;
-      margin: 16px 0;
-      opacity: .95;
-    }
-    .post-prose a { text-decoration: underline; }
     .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-
     @media (prefers-reduced-motion: reduce) {
       .t-smooth { transition: none !important; }
       * { scroll-behavior: auto !important; }
     }
   </style>
 
-  <!-- ✅ Article JSON-LD placeholder (updated dynamically once the post loads) -->
-  <script type="application/ld+json" id="jsonld">
+  <!-- Blog JSON-LD -->
+  <script type="application/ld+json" id="blog-jsonld">
   {
     "@context":"https://schema.org",
-    "@type":"BlogPosting",
-    "headline":"AniTrain News – Post",
-    "description":"Read the latest AniTrain news, updates, anime fitness tips, and app announcements.",
-    "image":["https://anitrain.app/preview.jpg"],
-    "author":{"@type":"Person","name":"AniTrain"},
-    "publisher":{"@type":"Organization","name":"AniTrain","logo":{"@type":"ImageObject","url":"https://anitrain.app/anitrain-logo.png"}},
-    "mainEntityOfPage":"https://anitrain.app/post.html"
-  }
-  </script>
-
-  <!-- ✅ Breadcrumb JSON-LD placeholder (updated dynamically) -->
-  <script type="application/ld+json" id="breadcrumbs-jsonld">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      { "@type":"ListItem", "position":1, "name":"Home", "item":"https://anitrain.app/" },
-      { "@type":"ListItem", "position":2, "name":"News", "item":"https://anitrain.app/blog.html" },
-      { "@type":"ListItem", "position":3, "name":"Post", "item":"https://anitrain.app/post.html" }
-    ]
+    "@type":"Blog",
+    "name":"AniTrain News",
+    "url":"https://anitrain.app/blog.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"AniTrain",
+      "logo":{"@type":"ImageObject","url":"https://anitrain.app/anitrain-logo.png"}
+    }
   }
   </script>
 </head>
 
-<body id="top" class="font-poppins bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-secondary gradient-bg">
+<body class="font-poppins bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-secondary gradient-bg" id="top">
+
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +122,8 @@
         </a>
 
         <nav class="hidden lg:flex lg:items-center lg:space-x-8" aria-label="Primary navigation">
-          <a href="./blog.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 t-smooth">News</a>
+          <a href="./index.html#home" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 t-smooth">Home</a>
+          <a href="./blog.html" class="text-sm font-extrabold text-anitrain-orange">News</a>
           <a href="./about-us.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 t-smooth">About Us</a>
         </nav>
 
@@ -194,81 +154,197 @@
     <!-- Mobile Menu -->
     <div class="lg:hidden hidden bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border" id="mobile-menu">
       <div class="px-4 pt-3 pb-4 space-y-3">
-        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">News</a>
+        <a href="./index.html#home" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">Home</a>
+        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-extrabold text-anitrain-orange bg-anitrain-orange/10">News</a>
         <a href="./about-us.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">About Us</a>
       </div>
     </div>
   </header>
 
-  <main class="py-10 lg:py-14">
+  <!-- Hero -->
+  <section class="py-10 lg:py-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary">
+              AniTrain News
+            </h1>
+            <p class="mt-2 text-light-text-secondary dark:text-dark-text-secondary max-w-2xl">
+              Anime fitness guides, workout inspiration, and official AniTrain app announcements.
+            </p>
+          </div>
+
+          <a href="./index.html#download"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-anitrain-orange text-white font-semibold shadow-lg hover:bg-anitrain-orange-dark hover:scale-105 t-smooth w-fit">
+            Train Now <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+        </div>
+
+        <!-- Controls -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div class="lg:col-span-7">
+            <div class="relative">
+              <ion-icon name="search-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-xl opacity-70"></ion-icon>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search posts (e.g., One Piece, workout, MAPPA, Naruto)…"
+                class="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-light-border dark:border-dark-border bg-white/70 dark:bg-dark-surface text-light-text-primary dark:text-dark-text-primary outline-none focus:ring-4 focus:ring-anitrain-orange/25"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex gap-3">
+            <button id="clearBtn"
+              class="w-full px-4 py-3.5 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface font-semibold hover:border-anitrain-orange hover:text-anitrain-orange t-smooth">
+              Clear
+            </button>
+            <button id="refreshBtn"
+              class="w-full px-4 py-3.5 rounded-2xl bg-anitrain-orange text-white font-semibold shadow-lg hover:bg-anitrain-orange-dark t-smooth">
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="mt-5">
+          <div id="categoriesBar" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- ✅ No-JS / Crawl fallback -->
+        <noscript>
+          <div class="mt-6 p-4 rounded-2xl border border-light-border bg-white text-sm">
+            JavaScript is disabled. You can still read posts below:
+            <a class="text-anitrain-orange font-semibold underline" href="./post.html?slug=your-anime-rankings-best-of-fall-2025">Open a post</a>.
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="pb-14">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-        <!-- Left: Post -->
+        <!-- Posts list -->
         <section class="lg:col-span-8">
-          <a href="./blog.html"
-             class="inline-flex items-center gap-2 text-sm font-semibold text-anitrain-orange hover:underline mb-5">
-            ← Back to News
-          </a>
+          <!-- Status -->
+          <div id="statusRow"
+               class="mb-5 p-4 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            ✅ Latest posts (live feed loading…)
+          </div>
 
-          <article class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg overflow-hidden">
-            <div id="heroWrap" class="hidden">
-              <img id="heroImage" src="" alt="" class="w-full h-[260px] sm:h-[360px] object-cover"
-                   loading="lazy" decoding="async" width="1200" height="675">
-            </div>
-
-            <div class="p-6 sm:p-10">
-              <p id="dateLine" class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-3"></p>
-
-              <h1 id="title" class="text-3xl sm:text-4xl font-extrabold mb-4 animate-glow">
-                Loading…
-              </h1>
-
-              <div class="flex items-center gap-3 mb-5">
-                <img id="authorAvatar"
-                     src="https://placehold.co/80x80/101010/FF951A?text=AU"
-                     alt="Author avatar"
-                     class="w-10 h-10 rounded-full object-cover border border-light-border dark:border-dark-border"
-                     loading="lazy" decoding="async" width="40" height="40"
-                     onerror="this.onerror=null;this.src='https://placehold.co/80x80/101010/FF951A?text=AU';">
-                <div class="leading-tight">
-                  <p class="font-semibold text-light-text-primary dark:text-dark-text-primary" id="authorName">AniTrain</p>
-                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary" id="metaLine"></p>
+          <!-- ✅ Fallback cards (so Google doesn't see an empty page) -->
+          <div id="postsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <article class="group rounded-3xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface shadow-lg hover:shadow-xl hover:border-anitrain-orange t-smooth">
+              <a href="./post.html?slug=your-anime-rankings-best-of-fall-2025" class="block">
+                <div class="p-5">
+                  <p class="text-xs font-semibold text-anitrain-orange mb-2">AniTrain</p>
+                  <h2 class="text-lg font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2 clamp-2 group-hover:text-anitrain-orange t-smooth">
+                    Your Anime Rankings: Best of Fall 2025
+                  </h2>
+                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary clamp-3">
+                    Rankings, highlights, and what to watch next—plus training motivation inspired by anime discipline.
+                  </p>
+                  <div class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-anitrain-orange">
+                    Read more <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
                 </div>
-              </div>
+              </a>
+            </article>
 
-              <div id="categoryBadges" class="flex flex-wrap gap-2 mb-6"></div>
+            <article class="group rounded-3xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface shadow-lg hover:shadow-xl hover:border-anitrain-orange t-smooth">
+              <a href="./post.html?slug=hell-s-paradise-jigokuraku-season-2-set-to-thrill-fans-this-winter-mappa-returns-with-darker" class="block">
+                <div class="p-5">
+                  <p class="text-xs font-semibold text-anitrain-orange mb-2">AniTrain</p>
+                  <h2 class="text-lg font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2 clamp-2 group-hover:text-anitrain-orange t-smooth">
+                    Hell’s Paradise Season 2: What to Expect
+                  </h2>
+                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary clamp-3">
+                    A quick preview for fans—plus a training mindset takeaway.
+                  </p>
+                  <div class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-anitrain-orange">
+                    Read more <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </a>
+            </article>
 
-              <div class="flex flex-wrap items-center gap-3 mb-8">
-                <button id="shareBtn" class="px-4 py-2 rounded-full border border-light-border dark:border-dark-border hover:bg-anitrain-orange/10 font-semibold text-sm">
-                  Share
-                </button>
-                <span id="viewsLine" class="text-sm text-light-text-secondary dark:text-dark-text-secondary"></span>
-              </div>
+            <article class="group rounded-3xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface shadow-lg hover:shadow-xl hover:border-anitrain-orange t-smooth">
+              <a href="./post.html?slug=vivi-is-the-next-straw-hat-pirate" class="block">
+                <div class="p-5">
+                  <p class="text-xs font-semibold text-anitrain-orange mb-2">AniTrain</p>
+                  <h2 class="text-lg font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2 clamp-2 group-hover:text-anitrain-orange t-smooth">
+                    One Piece Theory: Vivi & the Straw Hats
+                  </h2>
+                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary clamp-3">
+                    Fun theory breakdown, spoiler-light—and a “crew discipline” training tip.
+                  </p>
+                  <div class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-anitrain-orange">
+                    Read more <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </a>
+            </article>
 
-              <div id="content" class="post-prose text-light-text-secondary dark:text-dark-text-secondary"></div>
+            <article class="group rounded-3xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface shadow-lg hover:shadow-xl hover:border-anitrain-orange t-smooth">
+              <a href="./post.html?slug=kaguya-sama-love-is-war-to-conclude-with-a-brand-new-anime-film" class="block">
+                <div class="p-5">
+                  <p class="text-xs font-semibold text-anitrain-orange mb-2">AniTrain</p>
+                  <h2 class="text-lg font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2 clamp-2 group-hover:text-anitrain-orange t-smooth">
+                    Kaguya-sama: New Anime Film Announcement
+                  </h2>
+                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary clamp-3">
+                    What we know so far—and a quick motivation boost.
+                  </p>
+                  <div class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-anitrain-orange">
+                    Read more <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
 
-              <div class="mt-12 pt-8 border-t border-light-border dark:border-dark-border">
-                <h2 class="text-xl font-extrabold mb-4 text-light-text-primary dark:text-dark-text-primary">Recommended next</h2>
-                <div id="bottomRecs" class="grid grid-cols-1 sm:grid-cols-2 gap-5"></div>
-              </div>
-            </div>
-          </article>
+          <!-- Pagination -->
+          <div class="mt-8 flex items-center justify-between gap-3">
+            <button id="prevBtn"
+              class="px-5 py-3 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-anitrain-orange hover:text-anitrain-orange t-smooth">
+              ← Prev
+            </button>
+
+            <div id="pageInfo" class="text-sm text-light-text-secondary dark:text-dark-text-secondary"></div>
+
+            <button id="nextBtn"
+              class="px-5 py-3 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-anitrain-orange hover:text-anitrain-orange t-smooth">
+              Next →
+            </button>
+          </div>
 
           <div id="errorBox"
                class="hidden mt-6 p-4 rounded-xl border border-red-300 bg-red-50 text-red-700 dark:bg-red-950/30 dark:border-red-900 dark:text-red-200"></div>
         </section>
 
-        <!-- Right: Sidebar -->
+        <!-- Sidebar -->
         <aside class="lg:col-span-4 space-y-6">
           <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
-            <h3 class="text-lg font-extrabold mb-4 text-light-text-primary dark:text-dark-text-primary">Categories</h3>
-            <div id="sidebarCategories" class="flex flex-wrap gap-2"></div>
+            <h3 class="text-lg font-extrabold mb-3 text-light-text-primary dark:text-dark-text-primary">Trending Topics</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="topicBtn text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth" data-q="workout">Workout</button>
+              <button class="topicBtn text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth" data-q="naruto">Naruto</button>
+              <button class="topicBtn text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth" data-q="one piece">One Piece</button>
+              <button class="topicBtn text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth" data-q="demon slayer">Demon Slayer</button>
+              <button class="topicBtn text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth" data-q="mappa">MAPPA</button>
+            </div>
           </div>
 
           <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
-            <h3 class="text-lg font-extrabold mb-4 text-light-text-primary dark:text-dark-text-primary">More posts</h3>
-            <div id="sidebarRecs" class="space-y-4"></div>
+            <h3 class="text-lg font-extrabold mb-3 text-light-text-primary dark:text-dark-text-primary">About this Blog</h3>
+            <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              AniTrain News shares anime-inspired fitness articles, motivation, and official updates for the AniTrain app.
+              If you like a post, share it with a friend and keep training.
+            </p>
           </div>
 
           <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
@@ -279,6 +355,7 @@
             </div>
           </div>
         </aside>
+
       </div>
     </div>
   </main>
@@ -304,17 +381,32 @@
 
   <script>
     // ============================
-    // ✅ CONFIG (Sanity)
+    // CONFIG (Sanity)
     // ============================
     const SANITY_PROJECT_ID = "7vt4jf3d";
     const SANITY_DATASET = "production";
     const SANITY_API_VERSION = "2023-03-25";
 
+    const POSTS_PER_PAGE = 8;
+
     const $ = (id) => document.getElementById(id);
 
-    function getSlug() {
-      return new URLSearchParams(location.search).get("slug") || "";
-    }
+    // Safe getters (won't crash if missing)
+    const statusRow = $("statusRow");
+    const errorBox = $("errorBox");
+    const postsGrid = $("postsGrid");
+    const categoriesBar = $("categoriesBar");
+    const searchInput = $("searchInput");
+    const clearBtn = $("clearBtn");
+    const refreshBtn = $("refreshBtn");
+    const prevBtn = $("prevBtn");
+    const nextBtn = $("nextBtn");
+    const pageInfo = $("pageInfo");
+
+    let allPosts = [];
+    let allCategories = [];
+    let activeCategory = "All";
+    let page = 1;
 
     function safeText(text) {
       return (text || "").toString().replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -322,242 +414,195 @@
 
     function formatDate(dateStr) {
       if (!dateStr) return "";
-      try { return new Date(dateStr).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' }); }
+      try { return new Date(dateStr).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' }); }
       catch { return ""; }
     }
 
-    function extractPlainText(body) {
-      const text = (body || [])
+    function plainTextFromBlocks(body) {
+      return (body || [])
         .map(b => b?._type === "block" ? (b.children || []).map(c => c.text || "").join(" ") : "")
         .join(" ")
         .replace(/\s+/g, " ")
         .trim();
-      return text;
     }
 
-    function excerptFromBody(body, maxChars = 155) {
-      const txt = extractPlainText(body);
-      return txt.length > maxChars ? txt.slice(0, maxChars).trim() + "…" : txt;
+    function excerpt(body, maxChars = 140) {
+      const txt = plainTextFromBlocks(body);
+      return txt.length > maxChars ? (txt.slice(0, maxChars).trim() + "…") : txt;
     }
 
-    function estimateReadTimeFromBlocks(body) {
-      const words = extractPlainText(body).split(/\s+/).filter(Boolean).length;
+    function estimateReadTime(body) {
+      const words = plainTextFromBlocks(body).split(/\s+/).filter(Boolean).length;
       const minutes = Math.max(1, Math.round(words / 200));
       return `${minutes} min read`;
     }
 
-    function wordCountFromBlocks(body) {
-      return extractPlainText(body).split(/\s+/).filter(Boolean).length;
+    function setStatus(msg) {
+      if (statusRow) statusRow.textContent = msg;
     }
 
-    function getLocalViews(slug) {
-      try {
-        const raw = localStorage.getItem("anitrain_post_views") || "{}";
-        const obj = JSON.parse(raw);
-        return Number(obj[slug] || 0);
-      } catch { return 0; }
+    function showError(msg) {
+      if (!errorBox) return;
+      errorBox.textContent = msg;
+      errorBox.classList.remove("hidden");
     }
 
-    function incrementViews(slug) {
-      if (!slug) return 0;
-      try {
-        const raw = localStorage.getItem("anitrain_post_views") || "{}";
-        const obj = JSON.parse(raw);
-        obj[slug] = Number(obj[slug] || 0) + 1;
-        localStorage.setItem("anitrain_post_views", JSON.stringify(obj));
-        return obj[slug];
-      } catch { return 0; }
+    function hideError() {
+      if (!errorBox) return;
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
     }
 
-    async function shareLink(title, url) {
-      try {
-        if (navigator.share) await navigator.share({ title, url });
-        else { await navigator.clipboard.writeText(url); alert("Link copied!"); }
-      } catch {}
+    function buildCard(post) {
+      const slug = post.slug?.current || "";
+      const title = safeText(post.title || "Untitled");
+      const img = post.mainImage?.asset?.url || "https://placehold.co/1200x675/171717/FFF?text=AniTrain";
+      const date = formatDate(post.publishedAt);
+      const cats = (post.categories || []).map(c => c?.title).filter(Boolean);
+      const catsLine = cats.length ? cats.slice(0, 2).join(" • ") : "AniTrain";
+      const ex = safeText(excerpt(post.body, 140));
+      const rt = estimateReadTime(post.body);
+
+      // ✅ Correct post link
+      const href = `./post.html?slug=${encodeURIComponent(slug)}`;
+
+      return `
+        <article class="group rounded-3xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface shadow-lg hover:shadow-xl hover:border-anitrain-orange t-smooth">
+          <a href="${href}" class="block" aria-label="${title}">
+            <div class="relative">
+              <img src="${img}" alt="${title}"
+                   class="w-full h-48 object-cover"
+                   loading="lazy" decoding="async" width="1200" height="675"
+                   onerror="this.onerror=null;this.src='https://placehold.co/1200x675/171717/FFF?text=AniTrain';">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between gap-2 text-white/90 text-xs">
+                <span class="font-semibold">${date || ""}</span>
+                <span class="font-semibold">${rt}</span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <p class="text-xs font-semibold text-anitrain-orange mb-2">${safeText(catsLine)}</p>
+              <h2 class="text-lg font-extrabold text-light-text-primary dark:text-dark-text-primary mb-2 clamp-2 group-hover:text-anitrain-orange t-smooth">
+                ${title}
+              </h2>
+              <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary clamp-3">
+                ${ex}
+              </p>
+
+              <div class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-anitrain-orange">
+                Read more <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </a>
+        </article>
+      `;
     }
 
-    // Portable Text Renderer (simple)
-    function renderPortableText(blocks) {
-      if (!Array.isArray(blocks)) return "";
-      return blocks.map(block => {
-        if (!block || block._type !== "block") return "";
+    function renderCategories() {
+      if (!categoriesBar) return;
 
-        const style = block.style || "normal";
-        const children = Array.isArray(block.children) ? block.children : [];
-        const markDefs = Array.isArray(block.markDefs) ? block.markDefs : [];
+      categoriesBar.innerHTML = "";
+      const cats = ["All", ...allCategories.map(c => c.title).filter(Boolean)];
 
-        const markMap = {};
-        markDefs.forEach(def => { if (def._key) markMap[def._key] = def; });
+      cats.forEach(cat => {
+        const isActive = cat === activeCategory;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = cat;
+        btn.className =
+          (isActive ? "bg-anitrain-orange text-white"
+                    : "bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white") +
+          " text-xs font-semibold px-3 py-1 rounded-full t-smooth";
 
-        const inline = children.map(span => {
-          const text = safeText(span.text || "");
-          const marks = Array.isArray(span.marks) ? span.marks : [];
-          let out = text;
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          page = 1;
+          renderAll();
+          renderCategories(); // update active styles
+        });
 
-          marks.forEach(m => {
-            if (m === "strong") out = `<strong>${out}</strong>`;
-            else if (m === "em") out = `<em>${out}</em>`;
-            else if (markMap[m]?.href) out = `<a href="${markMap[m].href}" target="_blank" rel="noopener">${out}</a>`;
-          });
-
-          return out;
-        }).join("");
-
-        if (style === "h2") return `<h2 class="text-light-text-primary dark:text-dark-text-primary">${inline}</h2>`;
-        if (style === "h3") return `<h3 class="text-light-text-primary dark:text-dark-text-primary">${inline}</h3>`;
-        if (style === "blockquote") return `<blockquote>${inline}</blockquote>`;
-        return `<p>${inline}</p>`;
-      }).join("");
+        categoriesBar.appendChild(btn);
+      });
     }
 
-    async function fetchPostBySlug(slug) {
-      const query = encodeURIComponent(`*[_type=="post" && slug.current==$slug][0]{
-        _id,
-        title,
-        slug,
-        body,
-        mainImage{asset->{url}},
-        publishedAt,
-        _updatedAt,
-        categories[]->{title},
-        author->{name, image{asset->{url}}}
-      }`);
+    function filteredPosts() {
+      const q = (searchInput?.value || "").trim().toLowerCase();
 
-      const slugParam = encodeURIComponent(JSON.stringify(slug));
-      const url =
-        `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}` +
-        `?query=${query}&$slug=${slugParam}`;
+      return allPosts.filter(p => {
+        const title = (p.title || "").toLowerCase();
+        const body = plainTextFromBlocks(p.body || []).toLowerCase();
+        const catTitles = (p.categories || []).map(c => (c?.title || "").toLowerCase());
 
-      const res = await fetch(url);
-      const data = await res.json();
-      return data.result || null;
+        const matchesCategory =
+          activeCategory === "All" || catTitles.includes(activeCategory.toLowerCase());
+
+        const matchesSearch =
+          !q || title.includes(q) || body.includes(q) || catTitles.some(ct => ct.includes(q));
+
+        return matchesCategory && matchesSearch;
+      });
     }
 
-    async function fetchForSidebar(currentSlug) {
+    function renderAll() {
+      hideError();
+
+      const list = filteredPosts();
+      const total = list.length;
+      const totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
+
+      if (page > totalPages) page = totalPages;
+      if (page < 1) page = 1;
+
+      const start = (page - 1) * POSTS_PER_PAGE;
+      const slice = list.slice(start, start + POSTS_PER_PAGE);
+
+      if (postsGrid) {
+        postsGrid.innerHTML = slice.length
+          ? slice.map(buildCard).join("")
+          : `
+            <div class="sm:col-span-2 p-5 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface">
+              No posts found for this filter. Try another category or clear the search.
+            </div>
+          `;
+      }
+
+      if (prevBtn) prevBtn.disabled = page <= 1;
+      if (nextBtn) nextBtn.disabled = page >= totalPages;
+      if (pageInfo) pageInfo.textContent = `Page ${page} of ${totalPages} • ${total} posts`;
+
+      const statusCat = activeCategory === "All" ? "All categories" : activeCategory;
+      const statusSearch = (searchInput?.value || "").trim()
+        ? `Search: "${searchInput.value.trim()}"`
+        : "No search";
+
+      setStatus(`Showing ${slice.length} of ${total} • ${statusCat} • ${statusSearch}`);
+    }
+
+    async function fetchBlogData() {
       const query = encodeURIComponent(`{
         "categories": *[_type=="category"] | order(title asc){title},
-        "posts": *[_type=="post" && slug.current != $slug] | order(publishedAt desc)[0...20]{
-          title, slug, publishedAt, body, mainImage{asset->{url}}, categories[]->{title}
+        "posts": *[_type=="post"] | order(publishedAt desc){
+          title, slug, publishedAt, body,
+          mainImage{asset->{url}},
+          categories[]->{title}
         }
       }`);
 
-      const slugParam = encodeURIComponent(JSON.stringify(currentSlug));
       const url =
-        `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}` +
-        `?query=${query}&$slug=${slugParam}`;
+        `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${query}`;
 
-      const res = await fetch(url);
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Sanity fetch failed: ${res.status} ${res.statusText}`);
       const data = await res.json();
       return data.result || { categories: [], posts: [] };
     }
 
-    // SEO helpers
-    function ensureMetaByName(name, content) {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    }
-
-    function ensureMetaByProp(prop, content) {
-      let el = document.querySelector(`meta[property="${prop}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("property", prop);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    }
-
-    function updateCanonical(url) {
-      const link = document.querySelector(`link[rel="canonical"]`);
-      if (link) link.setAttribute("href", url);
-    }
-
-    function setRobots(content) {
-      const el = document.querySelector(`meta[name="robots"]`);
-      if (el) el.setAttribute("content", content);
-    }
-
-    function updateJsonLd(payload) {
-      const el = $("jsonld");
-      if (el) el.textContent = JSON.stringify(payload);
-    }
-
-    function updateBreadcrumbs(title, canonical) {
-      const el = $("breadcrumbs-jsonld");
-      if (!el) return;
-      el.textContent = JSON.stringify({
-        "@context":"https://schema.org",
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          { "@type":"ListItem", "position":1, "name":"Home", "item":"https://anitrain.app/" },
-          { "@type":"ListItem", "position":2, "name":"News", "item":"https://anitrain.app/blog.html" },
-          { "@type":"ListItem", "position":3, "name": title, "item": canonical }
-        ]
-      });
-    }
-
-    function shuffle(arr) {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    function pickRelatedThenRandom(posts, currentCategories, count) {
-      const catSet = new Set((currentCategories || []).map(c => c?.title).filter(Boolean));
-      const related = posts.filter(p => (p.categories || []).some(c => catSet.has(c?.title)));
-      const mixed = [...shuffle(related), ...shuffle(posts.filter(p => !related.includes(p)))];
-      return mixed.slice(0, count);
-    }
-
-    function recCard(post) {
-      const slug = post.slug?.current || "";
-      const title = safeText(post.title || "Untitled");
-      const date = formatDate(post.publishedAt);
-      const img = post.mainImage?.asset?.url || "https://placehold.co/600x400/171717/FFF?text=AniTrain";
-      const ex = safeText(excerptFromBody(post.body, 110));
-
-      return `
-        <a href="./post.html?slug=${encodeURIComponent(slug)}"
-           class="group block rounded-2xl overflow-hidden border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface hover:border-anitrain-orange t-smooth">
-          <div class="flex gap-4 p-4">
-            <img src="${img}" alt="${title}"
-                 class="w-20 h-16 object-cover rounded-xl border border-light-border dark:border-dark-border"
-                 loading="lazy" decoding="async" width="80" height="64"
-                 onerror="this.onerror=null;this.src='https://placehold.co/200x160/171717/FFF?text=AniTrain';">
-            <div class="min-w-0">
-              <p class="text-xs text-light-text-secondary dark:text-dark-text-secondary mb-1">${date}</p>
-              <p class="font-bold text-sm clamp-2 group-hover:text-anitrain-orange">${title}</p>
-              <p class="text-xs mt-1 text-light-text-secondary dark:text-dark-text-secondary clamp-2">${ex}</p>
-            </div>
-          </div>
-        </a>
-      `;
-    }
-
-    function renderCategoriesSidebar(categories) {
-      const wrap = $("sidebarCategories");
-      wrap.innerHTML = "";
-
-      const all = ["All", ...(categories || []).map(x => x.title).filter(Boolean)];
-      all.forEach(cat => {
-        const a = document.createElement("a");
-        a.href = `./blog.html`;
-        a.className = "text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange hover:bg-anitrain-orange hover:text-white t-smooth";
-        a.textContent = cat;
-        wrap.appendChild(a);
-      });
-    }
-
     function initTheme() {
       const themeToggle = $("theme-toggle");
+      const navOpenBtn = $("nav-open-btn");
+      const mobileMenu = $("mobile-menu");
+      const goTop = $("go-top");
 
       if (localStorage.getItem('theme') === 'dark' ||
           (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -566,145 +611,119 @@
         document.documentElement.classList.remove('dark');
       }
 
-      themeToggle?.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+      }
 
-      const navOpenBtn = $("nav-open-btn");
-      const mobileMenu = $("mobile-menu");
-      navOpenBtn?.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        const icon = navOpenBtn.querySelector('ion-icon');
-        if (icon) icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
-      });
+      if (navOpenBtn && mobileMenu) {
+        navOpenBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const icon = navOpenBtn.querySelector('ion-icon');
+          if (icon) icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
+        });
+      }
 
-      const goTop = $("go-top");
-      window.addEventListener('scroll', () => {
-        if (!goTop) return;
-        const show = window.scrollY >= 400;
-        goTop.classList.toggle('opacity-0', !show);
-        goTop.classList.toggle('pointer-events-none', !show);
-      });
+      if (goTop) {
+        window.addEventListener('scroll', () => {
+          const show = window.scrollY >= 400;
+          goTop.classList.toggle('opacity-0', !show);
+          goTop.classList.toggle('pointer-events-none', !show);
+        });
+      }
 
-      $("currentYear").textContent = new Date().getFullYear();
+      const cy = $("currentYear");
+      if (cy) cy.textContent = new Date().getFullYear();
     }
 
-    (async function init() {
-      initTheme();
+    async function boot(force = false) {
+      try {
+        hideError();
+        setStatus("Loading live feed…");
 
-      const slug = getSlug();
-      const errorBox = $("errorBox");
+        const cacheKey = "anitrain_blog_cache_v3";
+        if (!force) {
+          const cached = sessionStorage.getItem(cacheKey);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            allCategories = Array.isArray(parsed.categories) ? parsed.categories : [];
+            allPosts = Array.isArray(parsed.posts) ? parsed.posts : [];
+            renderCategories();
+            renderAll();
+            setStatus("Loaded from cache. (Press Refresh for latest.)");
+            return;
+          }
+        }
 
-      if (!slug) {
-        errorBox.textContent = "Missing post slug.";
-        errorBox.classList.remove("hidden");
-        setRobots("noindex,nofollow");
-        return;
+        const result = await fetchBlogData();
+        allCategories = Array.isArray(result.categories) ? result.categories : [];
+        allPosts = Array.isArray(result.posts) ? result.posts : [];
+
+        sessionStorage.setItem(cacheKey, JSON.stringify({ categories: allCategories, posts: allPosts }));
+
+        renderCategories();
+        renderAll();
+        setStatus("Loaded latest posts.");
+      } catch (e) {
+        console.error(e);
+        showError("Live feed failed to load right now. You can still open the posts shown above.");
+        setStatus("Live feed error (showing fallback).");
       }
+    }
 
-      const [post, sidebarData] = await Promise.all([
-        fetchPostBySlug(slug),
-        fetchForSidebar(slug)
-      ]);
+    // Init
+    initTheme();
 
-      if (!post) {
-        errorBox.textContent = "Post not found. Please check the slug.";
-        errorBox.classList.remove("hidden");
-        setRobots("noindex,nofollow");
-        return;
-      }
+    if (searchInput) {
+      searchInput.addEventListener("input", () => { page = 1; renderAll(); });
+    }
 
-      // ✅ Now safe to index
-      setRobots("index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
-
-      // views
-      const views = incrementViews(slug);
-
-      // Fill post
-      const title = post.title || "AniTrain News";
-      const date = formatDate(post.publishedAt);
-      const authorName = post.author?.name || "AniTrain";
-      const authorAvatar = post.author?.image?.asset?.url || "https://placehold.co/80x80/101010/FF951A?text=AU";
-      const imageUrl = post.mainImage?.asset?.url || "";
-
-      $("title").textContent = title;
-      $("dateLine").textContent = date ? date : "";
-      $("authorName").textContent = authorName;
-      $("authorAvatar").src = authorAvatar;
-
-      const readTime = estimateReadTimeFromBlocks(post.body);
-      $("metaLine").textContent = `${readTime} • ${views} views`;
-      $("viewsLine").textContent = `Views: ${views}`;
-
-      if (imageUrl) {
-        $("heroImage").src = imageUrl;
-        $("heroImage").alt = title;
-        $("heroWrap").classList.remove("hidden");
-      }
-
-      $("categoryBadges").innerHTML =
-        (post.categories || []).map(c => `
-          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-anitrain-orange/10 text-anitrain-orange">
-            ${safeText(c.title)}
-          </span>
-        `).join("");
-
-      $("content").innerHTML = renderPortableText(post.body);
-
-      // Share
-      const canonical = `https://anitrain.app/post.html?slug=${encodeURIComponent(slug)}`;
-      $("shareBtn").addEventListener("click", () => shareLink(title, canonical));
-
-      // Sidebar
-      renderCategoriesSidebar(sidebarData.categories || []);
-      const posts = Array.isArray(sidebarData.posts) ? sidebarData.posts : [];
-      const picked = pickRelatedThenRandom(posts, post.categories || [], 6);
-      $("sidebarRecs").innerHTML = picked.slice(0, 3).map(recCard).join("");
-      $("bottomRecs").innerHTML = picked.slice(3, 6).map(recCard).join("");
-
-      // ✅ Dynamic SEO
-      const excerpt = excerptFromBody(post.body, 155) || "Read the latest AniTrain news, anime fitness tips, and app announcements.";
-      document.title = `${title} | AniTrain News`;
-
-      ensureMetaByName("description", excerpt);
-      ensureMetaByProp("og:title", `${title} | AniTrain`);
-      ensureMetaByProp("og:description", excerpt);
-      ensureMetaByProp("og:url", canonical);
-      ensureMetaByProp("og:image", imageUrl || "https://anitrain.app/preview.jpg");
-
-      ensureMetaByName("twitter:title", `${title} | AniTrain`);
-      ensureMetaByName("twitter:description", excerpt);
-      ensureMetaByName("twitter:image", imageUrl || "https://anitrain.app/preview.jpg");
-
-      updateCanonical(canonical);
-      updateBreadcrumbs(title, canonical);
-
-      const wc = wordCountFromBlocks(post.body);
-      const keywords = (post.categories || []).map(c => c?.title).filter(Boolean);
-
-      updateJsonLd({
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": canonical + "#article",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": canonical },
-        "headline": title,
-        "description": excerpt,
-        "inLanguage": "en",
-        "image": imageUrl ? [imageUrl] : ["https://anitrain.app/preview.jpg"],
-        "author": { "@type": "Person", "name": authorName },
-        "publisher": {
-          "@type": "Organization",
-          "name": "AniTrain",
-          "logo": { "@type": "ImageObject", "url": "https://anitrain.app/anitrain-logo.png" }
-        },
-        "datePublished": post.publishedAt || undefined,
-        "dateModified": post._updatedAt || post.publishedAt || undefined,
-        "wordCount": wc || undefined,
-        "keywords": keywords.length ? keywords.join(", ") : undefined,
-        "isPartOf": { "@type": "Blog", "name": "AniTrain News", "url": "https://anitrain.app/blog.html" }
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        if (searchInput) searchInput.value = "";
+        activeCategory = "All";
+        page = 1;
+        renderCategories();
+        renderAll();
       });
-    })();
+    }
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async () => { await boot(true); });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        page -= 1;
+        renderAll();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        page += 1;
+        renderAll();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    document.querySelectorAll(".topicBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (searchInput) searchInput.value = btn.getAttribute("data-q") || "";
+        page = 1;
+        renderAll();
+      });
+    });
+
+    // Load after page is interactive
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => boot());
+    } else {
+      setTimeout(() => boot(), 200);
+    }
   </script>
 </body>
 </html>

@@ -56,7 +56,7 @@ function buildSitemap(urls) {
 
   for (const item of urls) {
     // Your post URLs are query-based:
-    const loc = `${SITE}/post.html?slug=${encodeURIComponent(item.slug)}`;
+const loc = `${SITE}/post/${encodeURIComponent(item.slug)}`;
 
     lines.push(`  <url>`);
     lines.push(`    <loc>${xmlEscape(loc)}</loc>`);

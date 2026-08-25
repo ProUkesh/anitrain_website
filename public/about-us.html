@@ -1,3 +1,4 @@
+<!-- /public/about-us.html -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -5,23 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>About AniTrain – Anime Fitness App</title>
-  <meta name="description" content="Learn about AniTrain, the anime-inspired fitness app with XP, streaks, characters, and weekly challenges." />
-  <meta name="robots" content="index, follow" />
+  <title>About AniTrain | Anime Fitness App with XP, Streaks & Challenges</title>
+  <meta name="description" content="AniTrain is an anime-inspired fitness app that turns workouts into a game: earn XP, build streaks, level up, and stay consistent with weekly challenges." />
+  <meta name="keywords" content="AniTrain, anime fitness app, anime workouts, fitness gamification, XP workout app, streaks, weekly challenges, anime gym" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://anitrain.app/about-us.html" />
 
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About AniTrain | Anime Fitness App" />
+  <meta property="og:description" content="AniTrain turns workouts into a game: XP, streaks, levels, and weekly challenges inspired by anime." />
+  <meta property="og:url" content="https://anitrain.app/about-us.html" />
+  <meta property="og:site_name" content="AniTrain" />
+  <meta property="og:image" content="https://anitrain.app/preview.jpg" />
 
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About AniTrain | Anime Fitness App" />
+  <meta name="twitter:description" content="AniTrain turns workouts into a game: XP, streaks, levels, and weekly challenges inspired by anime." />
+  <meta name="twitter:image" content="https://anitrain.app/preview.jpg" />
+
+  <meta name="theme-color" content="#FF951A" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+  <!-- Tailwind + Fonts + Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <!-- Tailwind Config (same as index.html) -->
+  <!-- Tailwind Config (match your site theme) -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -44,72 +65,97 @@
             'light-text-secondary': 'hsl(240, 4%, 35%)',
             'light-border': 'hsl(240, 10%, 90%)',
           },
-          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
-          screens: { 'xs': '450px' },
-          animation: {
-            'glow': 'glow 2s ease-in-out infinite alternate',
-            'bounce-slow': 'bounce 3s infinite',
-          },
-          keyframes: {
-            glow: {
-              'from': { textShadow: '0 0 10px rgba(255,149,26,0.7), 0 0 20px rgba(255,149,26,0.5)' },
-              'to': { textShadow: '0 0 25px rgba(255,149,26,0.9), 0 0 45px rgba(255,149,26,0.7)' }
-            }
-          },
-          boxShadow: {
-            'soft': '0 10px 25px rgba(0,0,0,0.1)',
-            'hard': '0 20px 40px rgba(0,0,0,0.2)',
-          }
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] }
         }
       }
     };
   </script>
 
   <style>
-    body, header, section, footer, div, p, h1, h2, h3, a, button, img {
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
+    body { font-family: Poppins, sans-serif; }
+    .t-smooth { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease; }
     .dark .gradient-bg {
       background: linear-gradient(135deg,
         hsl(240, 15%, 5%) 0%,
         hsl(240, 12%, 8%) 50%,
         hsl(240, 10%, 12%) 100%);
     }
-    #theme-toggle.saiyan { animation: glow 1.5s infinite alternate; }
+    .clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    @media (prefers-reduced-motion: reduce) {
+      .t-smooth { transition: none !important; }
+      * { scroll-behavior: auto !important; }
+    }
   </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"AniTrain",
+    "url":"https://anitrain.app",
+    "logo":"https://anitrain.app/anitrain-logo.png",
+    "sameAs":[]
+  }
+  </script>
+
+  <!-- JSON-LD: About Page -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "name":"About AniTrain",
+    "url":"https://anitrain.app/about-us.html",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"AniTrain",
+      "url":"https://anitrain.app"
+    }
+  }
+  </script>
 </head>
 
 <body id="top" class="font-poppins bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-secondary gradient-bg">
 
-  <!-- Header (same structure as index.html) -->
+  <!-- Header (match blog.html) -->
   <header class="sticky top-0 z-50 bg-light-bg/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-light-border dark:border-dark-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="./index.html#home" class="flex-shrink-0 animate-bounce">
-          <img src="./anitrain-logo.png" alt="AniTrain logo" class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-lg border-2 border-anitrain-orange"
-            onerror="this.onerror=null;this.src='https://placehold.co/56x56/101010/FF951A?text=AT';">
+        <a href="./index.html#home" class="flex-shrink-0" aria-label="AniTrain Home">
+          <img
+            src="./anitrain-logo.png"
+            alt="AniTrain logo"
+            width="56"
+            height="56"
+            class="h-12 sm:h-14 w-12 sm:w-14 object-cover rounded-full shadow-lg border-2 border-anitrain-orange"
+            decoding="async"
+            onerror="this.onerror=null;this.src='https://placehold.co/56x56/101010/FF951A?text=AT';"
+          >
         </a>
 
-        <nav class="hidden lg:flex lg:items-center lg:space-x-8">
-          <a href="./index.html#features" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Features</a>
-          <a href="./index.html#characters" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Characters</a>
-          <a href="./index.html#reviews" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">Testimonials</a>
-          <a href="./blog.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 transition-all">News</a>
-          <a href="./about-us.html" class="text-sm font-semibold text-anitrain-orange hover:scale-105 transition-all">About</a>
+        <nav class="hidden lg:flex lg:items-center lg:space-x-8" aria-label="Primary navigation">
+          <a href="./index.html#home" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 t-smooth">Home</a>
+          <a href="./blog.html" class="text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-anitrain-orange hover:scale-105 t-smooth">News</a>
+          <a href="./about-us.html" class="text-sm font-extrabold text-anitrain-orange">About</a>
         </nav>
 
         <div class="flex items-center space-x-3 sm:space-x-4">
-          <a href="./index.html#home" class="hidden sm:inline-flex px-6 py-3 bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-            Download
+          <a href="./index.html#support"
+             class="px-6 py-3 bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 t-smooth focus:outline-none focus:ring-4 focus:ring-anitrain-orange/50">
+            💖 Support Us
           </a>
 
-          <button id="theme-toggle" type="button" class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 focus:outline-none transition-colors">
+          <button id="theme-toggle" type="button"
+            class="p-2.5 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 focus:outline-none t-smooth"
+            aria-label="Toggle theme">
             <ion-icon name="sunny-outline" class="text-xl inline dark:hidden text-yellow-400"></ion-icon>
             <ion-icon name="moon-outline" class="text-xl hidden dark:inline text-white"></ion-icon>
           </button>
 
           <div class="lg:hidden">
-            <button id="nav-open-btn" type="button" class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20">
+            <button id="nav-open-btn" type="button"
+              class="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 text-light-text-secondary dark:text-dark-text-secondary hover:bg-black/10 dark:hover:bg-white/20 t-smooth"
+              aria-label="Open menu">
               <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
             </button>
           </div>
@@ -120,169 +166,195 @@
     <!-- Mobile Menu -->
     <div class="lg:hidden hidden bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border" id="mobile-menu">
       <div class="px-4 pt-3 pb-4 space-y-3">
-        <a href="./index.html#features" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Features</a>
-        <a href="./index.html#characters" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Characters</a>
-        <a href="./index.html#reviews" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">Testimonials</a>
-        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange transition-all">News</a>
-        <a href="./about-us.html" class="block px-4 py-2 rounded-lg text-base font-semibold text-anitrain-orange hover:bg-anitrain-orange/20 transition-all">About</a>
+        <a href="./index.html#home" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">Home</a>
+        <a href="./blog.html" class="block px-4 py-2 rounded-lg text-base font-medium text-light-text-secondary dark:text-dark-text-secondary hover:bg-anitrain-orange/20 hover:text-anitrain-orange t-smooth">News</a>
+        <a href="./about-us.html" class="block px-4 py-2 rounded-lg text-base font-extrabold text-anitrain-orange bg-anitrain-orange/10">About</a>
       </div>
     </div>
   </header>
 
-  <main>
-
-    <!-- Hero -->
-    <section class="relative pt-24 pb-14 text-center" data-aos="fade-up">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
-          About <span class="text-anitrain-orange">Ani</span>Train
-        </h1>
-        <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-3xl mx-auto leading-relaxed">
-          AniTrain is an anime-inspired fitness app designed to turn training into a game — earn XP, build streaks, and become a true warrior.
-        </p>
-      </div>
-    </section>
-
-    <!-- About Content -->
-    <section class="pb-20 lg:pb-28">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Card -->
-        <div class="bg-white dark:bg-dark-surface rounded-3xl shadow-soft border border-light-border dark:border-dark-border p-8 sm:p-10 lg:p-12" data-aos="fade-up">
-          <div class="grid lg:grid-cols-2 gap-10 items-start">
-
-            <div>
-              <h2 class="text-3xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
-                Why AniTrain exists
-              </h2>
-              <p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
-                Most fitness apps feel repetitive. AniTrain was built for people who love anime, progress systems, and motivation.
-                Instead of “just a workout”, you get a journey: pick a warrior, train daily, gain XP, and level up.
-              </p>
-
-              <p class="text-light-text-secondary dark:text-dark-text-secondary">
-                The goal is simple: make consistency fun — and make improvement feel rewarding.
-              </p>
-
-              <div class="mt-8 grid sm:grid-cols-2 gap-4">
-                <div class="p-6 rounded-2xl bg-light-bg-secondary dark:bg-dark-bg-secondary border border-light-border dark:border-dark-border">
-                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Core</p>
-                  <p class="text-xl font-bold text-anitrain-orange mt-1">Workouts + XP</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-light-bg-secondary dark:bg-dark-bg-secondary border border-light-border dark:border-dark-border">
-                  <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Growth</p>
-                  <p class="text-xl font-bold text-anitrain-orange mt-1">Streaks + Levels</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 class="text-3xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
-                About the developer
-              </h2>
-              <p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
-                AniTrain is developed by an independent app developer focused on building polished, user-first apps.
-                The project is built through consistent iteration, real testing, and long-term feature expansion.
-              </p>
-              <p class="text-light-text-secondary dark:text-dark-text-secondary">
-                AniTrain is not just a fitness app — it’s a motivation system designed to push users to become stronger in real life.
-              </p>
-
-              <!-- Upcoming Features block (your list) -->
-              <div class="mt-8 bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-2xl border border-light-border dark:border-dark-border p-6">
-                <h3 class="text-xl font-bold text-anitrain-orange mb-4">Upcoming Features</h3>
-                <ul class="grid sm:grid-cols-2 gap-3 text-light-text-secondary dark:text-dark-text-secondary">
-                  <li>📖 Story Mode</li>
-                  <li>🎮 Anime Games</li>
-                  <li>🌸 Seasonal Events</li>
-                  <li>🧠 Anime Quiz</li>
-                  <li>🔓 Character Unlocks</li>
-                  <li>🕵️ Guess the Imposter</li>
-                  <li>⚔️ Community Battles</li>
-                  <li>🤖 AI Tracking for Workout</li>
-                  <li>👕 Merchandise</li>
-                  <li>🤝 Anime Partnerships</li>
-                  <li>🏆 Monthly Merch for Top XP</li>
-                </ul>
-              </div>
-            </div>
-
+  <!-- Hero -->
+  <section class="py-10 lg:py-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-light-text-primary dark:text-dark-text-primary">
+              About AniTrain
+            </h1>
+            <p class="mt-2 text-light-text-secondary dark:text-dark-text-secondary max-w-2xl">
+              AniTrain is an anime-inspired fitness app that turns training into a game — earn XP, build streaks, and level up your real life.
+            </p>
           </div>
-        </div>
 
-        <!-- Privacy + Delete Account buttons -->
-        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up">
-          <a href="./privacy.html" class="px-7 py-3 rounded-full font-semibold bg-white dark:bg-dark-surface border border-light-border dark:border-dark-border hover:scale-105 transition-all shadow-soft">
-            Privacy Policy
-          </a>
-          <a href="./delete-account.html" class="px-7 py-3 rounded-full font-semibold bg-gradient-to-r from-anitrain-orange to-anitrain-orange-dark text-white hover:scale-105 transition-all shadow-hard">
-            Delete Account
+          <a href="./index.html#download"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-anitrain-orange text-white font-semibold shadow-lg hover:bg-anitrain-orange-dark hover:scale-105 t-smooth w-fit">
+            Train Now <ion-icon name="arrow-forward-outline"></ion-icon>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="pb-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Main content -->
+        <section class="lg:col-span-8 space-y-6">
+
+          <div class="bg-white/60 dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-7 sm:p-8">
+            <h2 class="text-2xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-3">
+              Why AniTrain exists
+            </h2>
+            <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              Most fitness apps feel repetitive. AniTrain was built for people who love anime, progress systems, and motivation.
+              Instead of “just a workout,” you get a journey: pick a warrior, train daily, gain XP, and keep your streak alive.
+            </p>
+
+            <div class="mt-6 grid sm:grid-cols-2 gap-4">
+              <div class="p-6 rounded-2xl bg-light-bg-secondary dark:bg-dark-bg-secondary border border-light-border dark:border-dark-border">
+                <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Core</p>
+                <p class="text-xl font-bold text-anitrain-orange mt-1">Workouts + XP</p>
+              </div>
+              <div class="p-6 rounded-2xl bg-light-bg-secondary dark:bg-dark-bg-secondary border border-light-border dark:border-dark-border">
+                <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">Growth</p>
+                <p class="text-xl font-bold text-anitrain-orange mt-1">Streaks + Levels</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/60 dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-7 sm:p-8">
+            <h2 class="text-2xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-3">
+              What you get inside the app
+            </h2>
+
+            <ul class="grid sm:grid-cols-2 gap-3 text-light-text-secondary dark:text-dark-text-secondary">
+              <li class="flex gap-2"><span>⚡</span><span>Gamified XP & level progression</span></li>
+              <li class="flex gap-2"><span>🔥</span><span>Daily streak system</span></li>
+              <li class="flex gap-2"><span>🏆</span><span>Weekly challenges for consistency</span></li>
+              <li class="flex gap-2"><span>🧠</span><span>Motivation-first training flow</span></li>
+              <li class="flex gap-2"><span>🎯</span><span>Clear goals and progress feedback</span></li>
+              <li class="flex gap-2"><span>📈</span><span>Designed to keep you consistent</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-white/60 dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-7 sm:p-8">
+            <h2 class="text-2xl font-extrabold text-light-text-primary dark:text-dark-text-primary mb-3">
+              About the developer
+            </h2>
+            <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              AniTrain is built by an independent app developer focused on shipping production-ready apps.
+              This project is developed through constant iteration, real testing, and long-term feature expansion.
+            </p>
+            <p class="mt-3 text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              <strong class="text-light-text-primary dark:text-dark-text-primary">I build production-ready apps solo — from idea to launch.</strong>
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="./privacy.html"
+               class="w-full text-center px-6 py-3 rounded-2xl border border-light-border dark:border-dark-border bg-white/60 dark:bg-dark-surface font-semibold hover:border-anitrain-orange hover:text-anitrain-orange t-smooth">
+              Privacy Policy
+            </a>
+            <a href="./delete-account.html"
+               class="w-full text-center px-6 py-3 rounded-2xl bg-anitrain-orange text-white font-semibold shadow-lg hover:bg-anitrain-orange-dark t-smooth">
+              Delete Account
+            </a>
+          </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-6">
+          <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
+            <h3 class="text-lg font-extrabold mb-3 text-light-text-primary dark:text-dark-text-primary">Upcoming Features</h3>
+            <ul class="grid gap-2 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+              <li>📖 Story Mode</li>
+              <li>🎮 Anime Games</li>
+              <li>🌸 Seasonal Events</li>
+              <li>🧠 Anime Quiz</li>
+              <li>🔓 Character Unlocks</li>
+              <li>🕵️ Guess the Imposter</li>
+              <li>⚔️ Community Battles</li>
+              <li>🤖 AI Tracking for workout</li>
+              <li>👕 Merchandise</li>
+              <li>🤝 Anime partnerships</li>
+              <li>🏆 Monthly merch for top XP</li>
+            </ul>
+          </div>
+
+          <div class="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-3xl shadow-lg p-6">
+            <h3 class="text-lg font-extrabold mb-3 text-light-text-primary dark:text-dark-text-primary">Contact</h3>
+            <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+              For partnerships, feedback, or support, reach out anytime.
+            </p>
+            <div class="mt-3 text-sm">
+              <span class="font-semibold text-light-text-primary dark:text-dark-text-primary">Email:</span>
+              <span class="text-light-text-secondary dark:text-dark-text-secondary"> programmerukesh@gmail.com</span>
+            </div>
+          </div>
+        </aside>
 
       </div>
-    </section>
-
+    </div>
   </main>
 
-  <!-- Footer (same vibe as index.html) -->
   <footer class="bg-light-bg-secondary dark:bg-dark-bg-secondary pt-16 pb-10">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="border-t border-light-border dark:border-dark-border pt-10 text-center space-y-3">
-        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed">
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
           &copy; <span id="currentYear"></span> AniTrain. All rights reserved. Unleash Your Inner Hero.
         </p>
         <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
-          Built with ❤️ by <a href="https://programmerukesh.com" target="_blank" class="text-anitrain-orange hover:underline font-medium">programmerukesh.com</a>
+          Built with ❤️ by <a href="https://programmerukesh.com" target="_blank" rel="noopener" class="text-anitrain-orange hover:underline font-medium">programmerukesh.com</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- Go to Top -->
-  <a href="#top" id="go-top" class="fixed bottom-6 right-6 z-50 p-4 bg-anitrain-orange text-white rounded-full shadow-lg hover:bg-anitrain-orange-dark transition-all opacity-0 pointer-events-none duration-300">
+  <a href="#top" id="go-top"
+     class="fixed bottom-6 right-6 z-50 p-4 bg-anitrain-orange text-white rounded-full shadow-lg hover:bg-anitrain-orange-dark t-smooth opacity-0 pointer-events-none duration-300"
+     aria-label="Go to top">
     <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
   </a>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
+    // Theme
+    function initTheme() {
+      if (localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
 
-    // Theme Toggle (same behavior as index)
-    const themeToggle = document.getElementById('theme-toggle');
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      themeToggle?.classList.add('saiyan');
-    } else {
-      document.documentElement.classList.remove('dark');
+      document.getElementById("theme-toggle")?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+
+      // Mobile menu
+      const navOpenBtn = document.getElementById('nav-open-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      navOpenBtn?.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = navOpenBtn.querySelector('ion-icon');
+        if (icon) icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
+      });
+
+      // Go top
+      const goTop = document.getElementById('go-top');
+      window.addEventListener('scroll', () => {
+        const show = window.scrollY >= 400;
+        goTop.classList.toggle('opacity-0', !show);
+        goTop.classList.toggle('pointer-events-none', !show);
+      });
+
+      // Year
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
     }
-    themeToggle?.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      isDark ? themeToggle.classList.add('saiyan') : themeToggle.classList.remove('saiyan');
-    });
 
-    // Mobile Menu
-    const navOpenBtn = document.getElementById('nav-open-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    navOpenBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = navOpenBtn.querySelector('ion-icon');
-      if (icon) icon.name = mobileMenu.classList.contains('hidden') ? 'menu-outline' : 'close-outline';
-    });
-
-    // Go to Top
-    const goTop = document.getElementById('go-top');
-    window.addEventListener('scroll', () => {
-      if (!goTop) return;
-      goTop.classList.toggle('opacity-0', window.scrollY < 400);
-      goTop.classList.toggle('pointer-events-none', window.scrollY < 400);
-    });
-
-    // Year
-    const currentYearEl = document.getElementById('currentYear');
-    if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+    initTheme();
   </script>
 </body>
 </html>
