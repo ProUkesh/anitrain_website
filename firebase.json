@@ -1,22 +1,23 @@
 {
   "hosting": {
-    "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-  { "source": "/robots.txt", "destination": "/robots.txt" },
-  { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-  { "source": "/sitemap-pages.xml", "destination": "/sitemap-pages.xml" },
-  { "source": "/sitemap-posts.xml", "destination": "/sitemap-posts.xml" },
-  { "source": "/post/**", "destination": "/post/index.html" },
-
-  { "source": "/privacy.html", "destination": "/privacy.html" },
-  { "source": "/blog.html", "destination": "/blog.html" },
-  { "source": "/game.html", "destination": "/game.html" },
-  { "source": "/delete-account.html", "destination": "/delete-account.html" },
-  { "source": "/about-us.html", "destination": "/about-us.html" },
-
-  { "source": "**", "destination": "/index.html" }
-]
-
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "redirects": [
+      {
+        "source": "/blog.html",
+        "destination": "/blog",
+        "type": 301
+      },
+      {
+        "source": "/about-us.html",
+        "destination": "/about",
+        "type": 301
+      }
+    ]
   }
 }

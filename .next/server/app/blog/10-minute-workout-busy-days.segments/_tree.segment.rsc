@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/1mh6baq_ft2f-.css","style"]
+:HL["/anitrain-icon.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"10-minute-workout-busy-days","siblings":["anime-inspired-workouts-beginners","beginner-bodyweight-workout-plan","daily-fitness-routine","home-workouts-no-equipment","mobility-recovery-guide","stay-consistent-with-workouts"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"EmVKRky_4Ersv6lEjP4pJ"}

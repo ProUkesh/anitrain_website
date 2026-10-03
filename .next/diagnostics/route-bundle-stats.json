@@ -1,0 +1,271 @@
+[
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 481473,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1xmiwwjsobo8a.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/[slug]",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/anime-inspired-workouts-beginners",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/beginner-bodyweight-workout-plan",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/daily-fitness-routine",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/home-workouts-no-equipment",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/mobility-recovery-guide",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog/stay-consistent-with-workouts",
+    "firstLoadUncompressedJsBytes": 460177,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/1f3e3iqq5mikc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/about",
+    "firstLoadUncompressedJsBytes": 456546,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3mw38actp4qv9.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/advertise",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/anime-trainer-assistant",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/anime-workout-app",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/de",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/es",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/hi",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/id",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/pt",
+    "firstLoadUncompressedJsBytes": 456139,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/3ozwknpg9k9mc.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/_not-found",
+    "firstLoadUncompressedJsBytes": 452685,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/about-us.html",
+    "firstLoadUncompressedJsBytes": 452685,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/blog",
+    "firstLoadUncompressedJsBytes": 452685,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  },
+  {
+    "route": "/contact",
+    "firstLoadUncompressedJsBytes": 452685,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/3fntmmi971322.js",
+      ".next/static/chunks/310vm2bl3xxpt.js",
+      ".next/static/chunks/1f0m_nyksetzr.js",
+      ".next/static/chunks/39u3ld3zqxqqm.js",
+      ".next/static/chunks/41-qy6e2j64oc.js",
+      ".next/static/chunks/turbopack-3asyne6fp1yg3.js"
+    ]
+  }
+]

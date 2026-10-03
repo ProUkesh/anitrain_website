@@ -1,0 +1,204 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/about-us.html",
+      "regex": "^/about\\-us\\.html(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about\\-us\\.html(?:/)?$"
+    },
+    {
+      "page": "/advertise",
+      "regex": "^/advertise(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/advertise(?:/)?$"
+    },
+    {
+      "page": "/anime-trainer-assistant",
+      "regex": "^/anime\\-trainer\\-assistant(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/anime\\-trainer\\-assistant(?:/)?$"
+    },
+    {
+      "page": "/anime-workout-app",
+      "regex": "^/anime\\-workout\\-app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/anime\\-workout\\-app(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/blog/anime-inspired-workouts-beginners",
+      "regex": "^/blog/anime\\-inspired\\-workouts\\-beginners(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/anime\\-inspired\\-workouts\\-beginners(?:/)?$"
+    },
+    {
+      "page": "/blog/beginner-bodyweight-workout-plan",
+      "regex": "^/blog/beginner\\-bodyweight\\-workout\\-plan(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/beginner\\-bodyweight\\-workout\\-plan(?:/)?$"
+    },
+    {
+      "page": "/blog/daily-fitness-routine",
+      "regex": "^/blog/daily\\-fitness\\-routine(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/daily\\-fitness\\-routine(?:/)?$"
+    },
+    {
+      "page": "/blog/home-workouts-no-equipment",
+      "regex": "^/blog/home\\-workouts\\-no\\-equipment(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/home\\-workouts\\-no\\-equipment(?:/)?$"
+    },
+    {
+      "page": "/blog/mobility-recovery-guide",
+      "regex": "^/blog/mobility\\-recovery\\-guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/mobility\\-recovery\\-guide(?:/)?$"
+    },
+    {
+      "page": "/blog/stay-consistent-with-workouts",
+      "regex": "^/blog/stay\\-consistent\\-with\\-workouts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/stay\\-consistent\\-with\\-workouts(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/de",
+      "regex": "^/de(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/de(?:/)?$"
+    },
+    {
+      "page": "/es",
+      "regex": "^/es(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/es(?:/)?$"
+    },
+    {
+      "page": "/hi",
+      "regex": "^/hi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hi(?:/)?$"
+    },
+    {
+      "page": "/icon.png",
+      "regex": "^/icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.png(?:/)?$"
+    },
+    {
+      "page": "/id",
+      "regex": "^/id(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/id(?:/)?$"
+    },
+    {
+      "page": "/manifest.webmanifest",
+      "regex": "^/manifest\\.webmanifest(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/manifest\\.webmanifest(?:/)?$"
+    },
+    {
+      "page": "/pt",
+      "regex": "^/pt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pt(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

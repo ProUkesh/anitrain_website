@@ -1,0 +1,94 @@
+{
+  "ok": true,
+  "version": "12.9.5",
+  "source": "vscode-extension",
+  "reason": "activated",
+  "updatedAt": "2026-10-03T20:29:19.317Z",
+  "repoRoot": "/Users/anonyukh/projects/Anitrain-website",
+  "workspaceFolders": [
+    "/Users/anonyukh/projects/Anitrain-website"
+  ],
+  "activeFile": "src/app/page.tsx",
+  "activeFilePath": "/Users/anonyukh/projects/Anitrain-website/src/app/page.tsx",
+  "activeFileLanguageId": "typescriptreact",
+  "activeFileLineCount": 389,
+  "cursorLine": 389,
+  "cursorCharacter": 1,
+  "hasSelection": false,
+  "selectedText": "",
+  "selectedTextLength": 0,
+  "selection": {
+    "isEmpty": true,
+    "isReversed": true,
+    "anchor": {
+      "line": 389,
+      "character": 1,
+      "zeroBasedLine": 388,
+      "zeroBasedCharacter": 0
+    },
+    "active": {
+      "line": 389,
+      "character": 1,
+      "zeroBasedLine": 388,
+      "zeroBasedCharacter": 0
+    },
+    "start": {
+      "line": 389,
+      "character": 1,
+      "zeroBasedLine": 388,
+      "zeroBasedCharacter": 0
+    },
+    "end": {
+      "line": 389,
+      "character": 1,
+      "zeroBasedLine": 388,
+      "zeroBasedCharacter": 0
+    }
+  },
+  "selections": [
+    {
+      "isEmpty": true,
+      "isReversed": true,
+      "anchor": {
+        "line": 389,
+        "character": 1,
+        "zeroBasedLine": 388,
+        "zeroBasedCharacter": 0
+      },
+      "active": {
+        "line": 389,
+        "character": 1,
+        "zeroBasedLine": 388,
+        "zeroBasedCharacter": 0
+      },
+      "start": {
+        "line": 389,
+        "character": 1,
+        "zeroBasedLine": 388,
+        "zeroBasedCharacter": 0
+      },
+      "end": {
+        "line": 389,
+        "character": 1,
+        "zeroBasedLine": 388,
+        "zeroBasedCharacter": 0
+      }
+    }
+  ],
+  "visibleRanges": [
+    {
+      "start": {
+        "line": 1,
+        "character": 1,
+        "zeroBasedLine": 0,
+        "zeroBasedCharacter": 0
+      },
+      "end": {
+        "line": 15,
+        "character": 2,
+        "zeroBasedLine": 14,
+        "zeroBasedCharacter": 1
+      }
+    }
+  ]
+}

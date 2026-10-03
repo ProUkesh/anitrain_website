@@ -1,0 +1,13 @@
+var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/blog/anime-inspired-workouts-beginners/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__166iu_1._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_1n3w9lb._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0wie2sl._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0j26pto._.js")
+R.c("server/chunks/ssr/src_app_layout_tsx_0r5yz5t._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_0wpq8j3._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0symwr9.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0l_sp0x.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0q-w892.js")
+R.c("server/chunks/ssr/1oeh_server_app_blog_anime-inspired-workouts-beginners_page_actions_0g3gno4.js")
+R.m(93988)
+module.exports=R.m(93988).exports

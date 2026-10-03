@@ -1,6 +1,0 @@
-# /public/robots.txt
-User-agent: *
-Allow: /
-
-Sitemap: https://anitrain.app/sitemap.xml
-Sitemap: https://anitrain.app/sitemap-posts.xml

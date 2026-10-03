@@ -1,0 +1,18 @@
+export const dynamic = "force-static";
+
+import type { MetadataRoute } from "next";
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: "AniTrain",
+    short_name: "AniTrain",
+    description: "Anime-inspired workouts and everyday fitness training.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#000000",
+    theme_color: "#000000",
+    icons: [
+      { src: "/anitrain-icon.png", sizes: "512x512", type: "image/png" },
+    ],
+  };
+}
