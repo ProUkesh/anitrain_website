@@ -3,7 +3,7 @@
   "version": "12.9.5",
   "source": "vscode-extension",
   "reason": "activated",
-  "updatedAt": "2026-10-03T20:29:19.317Z",
+  "updatedAt": "2026-10-04T19:34:26.930Z",
   "repoRoot": "/Users/anonyukh/projects/Anitrain-website",
   "workspaceFolders": [
     "/Users/anonyukh/projects/Anitrain-website"
@@ -84,10 +84,10 @@
         "zeroBasedCharacter": 0
       },
       "end": {
-        "line": 15,
-        "character": 2,
-        "zeroBasedLine": 14,
-        "zeroBasedCharacter": 1
+        "line": 33,
+        "character": 66,
+        "zeroBasedLine": 32,
+        "zeroBasedCharacter": 65
       }
     }
   ]
