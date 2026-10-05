@@ -135,6 +135,12 @@
       "namedRegex": "^/de(?:/)?$"
     },
     {
+      "page": "/delete-account",
+      "regex": "^/delete\\-account(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/delete\\-account(?:/)?$"
+    },
+    {
       "page": "/es",
       "regex": "^/es(?:/)?$",
       "routeKeys": {},
@@ -163,6 +169,12 @@
       "regex": "^/manifest\\.webmanifest(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/manifest\\.webmanifest(?:/)?$"
+    },
+    {
+      "page": "/privacy",
+      "regex": "^/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy(?:/)?$"
     },
     {
       "page": "/pt",

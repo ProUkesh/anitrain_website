@@ -60,18 +60,69 @@ function YogaPerson() {
 
 function PushupPerson() {
   return (
-    <svg className="pushup-person" viewBox="0 0 520 250" aria-hidden="true">
-      <ellipse className="shadow" cx="270" cy="218" rx="205" ry="14" />
-      <g className="push-body">
-        <circle className="skin" cx="105" cy="108" r="28" />
-        <path className="hair" d="M78 108c0-31 20-46 44-37 18 7 23 22 17 41-17-13-37-17-61-4Z" />
-        <path className="headband" d="M82 100c18-7 36-6 54 1" /><circle className="character-eye" cx="96" cy="111" r="3.2" /><circle className="character-eye" cx="114" cy="111" r="3.2" /><path className="character-smile" d="M96 122c7 3 13 3 19 0" />
-        <path className="top push-torso" d="M135 110c68 1 135 9 204 28l-13 61c-74-18-144-25-210-19Z" />
-        <path className="mark" d="M187 133h32l-11 42h-31l10-42Z" />
-        <path className="limb push-arm-a" d="M159 151c-21 7-33 28-35 58" />
-        <path className="limb push-arm-b" d="M282 169c-6 12-9 27-8 45" />
-        <path className="leg" d="M326 184c54 6 88 10 128 7" />
-        <path className="shoe" d="M449 190c22 0 35 6 44 17-20 4-41 3-59-3" />
+    <svg className="pushup-person realistic-pushup" viewBox="0 0 760 330" aria-hidden="true">
+      <defs>
+        <linearGradient id="pushSkin" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#ffd0a0" />
+          <stop offset=".58" stopColor="#eaa06c" />
+          <stop offset="1" stopColor="#c8734d" />
+        </linearGradient>
+        <linearGradient id="pushShirt" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1d2b39" />
+          <stop offset="1" stopColor="#0b1119" />
+        </linearGradient>
+        <linearGradient id="pushShorts" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#162431" />
+          <stop offset="1" stopColor="#253b4c" />
+        </linearGradient>
+      </defs>
+
+      <ellipse className="push-real-shadow" cx="397" cy="292" rx="302" ry="18" />
+
+      <g className="push-body push-real-body">
+        {/* rear leg */}
+        <path className="push-real-leg rear" d="M505 206C560 219 611 231 665 237" />
+        <path className="push-real-calf rear" d="M655 237c22 0 41 8 57 22" />
+        <path className="push-real-shoe rear" d="M692 250c24 2 43 11 55 25-27 7-53 5-79-4l7-16Z" />
+
+        {/* front leg */}
+        <path className="push-real-leg" d="M491 194c59 14 111 30 165 43" />
+        <path className="push-real-calf" d="M645 236c25 1 46 8 65 21" />
+        <path className="push-real-shoe" d="M699 250c27 2 46 10 58 25-29 7-58 5-84-5l9-17Z" />
+
+        {/* hips + shorts */}
+        <path className="push-real-shorts" d="M431 169c30 5 58 11 82 20l-13 54c-28-8-56-15-83-19Z" />
+        <path className="push-real-waist" d="M426 169c31 6 57 11 83 20" />
+
+        {/* torso */}
+        <path className="push-real-shirt" d="M249 136c70-6 127 2 185 32l-17 66c-62-20-119-30-185-25l-10-49Z" />
+        <path className="push-real-shirt-panel" d="M284 145c45-1 85 7 125 25l-10 18c-38-14-76-21-117-20Z" />
+        <path className="push-real-accent" d="M331 154l41 7-17 61-43-6Z" />
+
+        {/* neck */}
+        <path className="push-real-neck" d="M238 137c-5-17-4-31 2-43l35 4c2 17-1 31-8 45Z" />
+
+        {/* head */}
+        <ellipse className="push-real-ear" cx="206" cy="112" rx="12" ry="15" />
+        <path className="push-real-face" d="M174 68c26-16 63-5 70 25 7 31-13 61-42 62-28 1-50-22-46-50 2-18 7-29 18-37Z" />
+        <path className="push-real-hair" d="M155 104c-4-34 15-60 49-61 31-1 54 21 49 53-9-8-18-13-28-17-8 10-20 17-36 19-10 1-21 4-34 6Z" />
+        <path className="push-real-hair-fringe" d="M171 62c13 4 25 12 34 25m11-31c-2 14-7 25-16 35m31-23c-7 11-16 19-28 25" />
+        <path className="push-real-headband" d="M159 88c29-10 58-10 86 2" />
+        <path className="push-real-brow" d="M174 109c7-5 14-6 22-2m18 1c7-4 14-3 20 1" />
+        <ellipse className="push-real-eye" cx="187" cy="116" rx="5" ry="6" />
+        <ellipse className="push-real-eye" cx="222" cy="116" rx="5" ry="6" />
+        <path className="push-real-nose" d="M205 119l-4 11 7 1" />
+        <path className="push-real-mouth" d="M188 139c13 8 27 7 39-2" />
+
+        {/* rear arm */}
+        <path className="push-real-upper-arm rear-arm" d="M393 183c-13 29-20 54-20 82" />
+        <path className="push-real-forearm rear-arm" d="M373 259c-2 10-2 20 0 30" />
+        <path className="push-real-hand rear-hand" d="M350 286c17-3 33-2 49 3-13 9-31 12-49 8Z" />
+
+        {/* front arm */}
+        <path className="push-real-upper-arm" d="M268 174c-25 18-41 47-46 85" />
+        <path className="push-real-forearm" d="M221 253c-4 14-4 26-1 38" />
+        <path className="push-real-hand" d="M194 287c20-4 39-3 57 3-15 9-37 12-58 7Z" />
       </g>
     </svg>
   );

@@ -3,7 +3,7 @@
   "version": "12.9.5",
   "source": "vscode-extension",
   "reason": "activated",
-  "updatedAt": "2026-10-04T19:34:26.930Z",
+  "updatedAt": "2026-10-05T19:01:55.083Z",
   "repoRoot": "/Users/anonyukh/projects/Anitrain-website",
   "workspaceFolders": [
     "/Users/anonyukh/projects/Anitrain-website"
@@ -11,8 +11,8 @@
   "activeFile": "src/app/page.tsx",
   "activeFilePath": "/Users/anonyukh/projects/Anitrain-website/src/app/page.tsx",
   "activeFileLanguageId": "typescriptreact",
-  "activeFileLineCount": 389,
-  "cursorLine": 389,
+  "activeFileLineCount": 440,
+  "cursorLine": 440,
   "cursorCharacter": 1,
   "hasSelection": false,
   "selectedText": "",
@@ -21,27 +21,27 @@
     "isEmpty": true,
     "isReversed": true,
     "anchor": {
-      "line": 389,
+      "line": 440,
       "character": 1,
-      "zeroBasedLine": 388,
+      "zeroBasedLine": 439,
       "zeroBasedCharacter": 0
     },
     "active": {
-      "line": 389,
+      "line": 440,
       "character": 1,
-      "zeroBasedLine": 388,
+      "zeroBasedLine": 439,
       "zeroBasedCharacter": 0
     },
     "start": {
-      "line": 389,
+      "line": 440,
       "character": 1,
-      "zeroBasedLine": 388,
+      "zeroBasedLine": 439,
       "zeroBasedCharacter": 0
     },
     "end": {
-      "line": 389,
+      "line": 440,
       "character": 1,
-      "zeroBasedLine": 388,
+      "zeroBasedLine": 439,
       "zeroBasedCharacter": 0
     }
   },
@@ -50,27 +50,27 @@
       "isEmpty": true,
       "isReversed": true,
       "anchor": {
-        "line": 389,
+        "line": 440,
         "character": 1,
-        "zeroBasedLine": 388,
+        "zeroBasedLine": 439,
         "zeroBasedCharacter": 0
       },
       "active": {
-        "line": 389,
+        "line": 440,
         "character": 1,
-        "zeroBasedLine": 388,
+        "zeroBasedLine": 439,
         "zeroBasedCharacter": 0
       },
       "start": {
-        "line": 389,
+        "line": 440,
         "character": 1,
-        "zeroBasedLine": 388,
+        "zeroBasedLine": 439,
         "zeroBasedCharacter": 0
       },
       "end": {
-        "line": 389,
+        "line": 440,
         "character": 1,
-        "zeroBasedLine": 388,
+        "zeroBasedLine": 439,
         "zeroBasedCharacter": 0
       }
     }
